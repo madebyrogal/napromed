@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           text
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          text
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:               { label: Nowy tekst, credentials: admin }
+      fields:  
+        module:             { label: Moduł rodzica }
+        parent_id:          { label: Rodzic }
+        title:              { label: Tytuł }
+        context:            { label: Treść }
+        hidden:             { label: Ukryta }
+      list:    
+        title:              Teksty
+        display:            [title, _context, hidden]
+        object_actions:
+          _edit:          ~
+          _delete:        { credentials: admin }
+        batch_actions:      {}
+      filter:  ~  
+      form:    ~        
+      edit:    
+        title:              Edycja tekstu
+      new:     
+        title:              Nowy tekst

@@ -1,0 +1,53 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# Root
+root:
+  url:      /
+  param:    { module: main, action: index }
+
+# Home
+homepage:
+  url:      /
+  param:    { module: main, action: index }
+
+# Zmiana jezyka
+#changeLang:
+#  url:      /:slug/change_lang.html
+#  class:    sfDoctrineRoute
+#  options:  { model: lang, type: object }
+#  param:    { module: lang, action: changeLang}
+
+# Strony statyczne
+staticPage:
+  url:      /:id/:slug.html
+  class:    sfDoctrineRoute
+  options:  { model: page, type: object }
+  param:    { module: page, action: showPage}
+  requirements: 
+    sf_method: [get,post]
+
+# Naprotechnologia
+napotechnologia:
+  url:      /naprotechnologia.html  
+  param:    { module: naprotech, action: index }
+
+# Niepłodność
+nieplodnosc:
+  url:      /nieplodnosc.html  
+  param:    { module: nieplodnosc, action: index }
+
+# Przeliczniki
+conversions:
+  url:      /przeliczniki.html  
+  param:    { module: conversions, action: index }
+
+# Kontakt
+contact:
+  url:      /kontakt.html
+  param:    { module: contact, action: index }
+  
+# Kontakt
+contact_send:
+  url:      /wyslij-formularz.html
+  param:    { module: contact, action: send }

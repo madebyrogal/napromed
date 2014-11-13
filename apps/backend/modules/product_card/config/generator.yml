@@ -1,0 +1,26 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           product_card
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          product_card
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Dodaj biuro }
+      fields:          
+      list:    
+        title:            Lista biur
+        display:          [_nazwa, _opis, hidden]
+      filter:  ~
+      form:    ~
+      edit:    
+        title:            Edytujesz biuro
+      new:     
+        title:            Nowe biuro

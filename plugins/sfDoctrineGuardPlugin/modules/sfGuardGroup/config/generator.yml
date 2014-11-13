@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           sfGuardGroup
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_group
+    with_doctrine_route:   true
+
+    config:
+      actions: 
+        _new:               { label: Dodaj grupę }
+      fields:
+        name:               { label: Nazwa }
+        description:        { label: Opis }
+        created_at:         { label: Data utworzenia }
+        updated_at:         { label: Data modyfikacji }
+      list:
+        title: Grupy użytkowników
+        display: [=name, description, created_at, updated_at]
+
+      form:
+        display: [name, description, users_list, permissions_list]
+
+      edit:
+        title: Edytujesz grupę "%%name%%"
+
+      new:
+        title: Nowa grupa

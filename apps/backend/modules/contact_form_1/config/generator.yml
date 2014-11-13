@@ -1,0 +1,40 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           contact_form_1
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          contact_form_1
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Dodaj kontakt, credentials: admin }
+      fields:  
+        name:             { label: Imię i nazwisko }
+        firm:             { label: Firma }
+        phone:            { label: Telefon }
+        email:            { label: E-mail }
+        subject:          { label: Temat}
+        type:             { label: Typ nieruchomości }
+        message:          { label: Wiadomość }
+        created_at:       { label: Data utworzenia}
+        updated_at:       { label: Data modyfikacji }
+      list:    
+        title:            Formularz kontaktowy
+        display:          [name,email,subject,created_at]
+        object_actions:
+          show:           { label: Pokaż }
+          _edit:          ~
+          _delete:        ~
+      filter:  ~
+      form:    
+        display:          [name,name,email,subject,message,created_at,updated_at]
+      edit:    
+        title:            Edytuj kontakt
+      new:     
+        title:            Dodaj kontakt

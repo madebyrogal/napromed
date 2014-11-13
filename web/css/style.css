@@ -1,0 +1,36 @@
+#ciasteczka_alert{
+  display: none;
+  position: absolute;
+  height: 55px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  width: 465px;
+  left: 275px;
+  z-index: 10;
+}
+#ciasteczka_alert a{
+  color: #fff;
+  font-weight: bold;
+}
+#ciasteczka_alert ul{
+  margin: 5px 0 0 0;
+}
+#ciasteczka_alert ul li{
+  list-style: none;
+  margin-right: 5px;
+  color: #fff;
+  height: 50px;
+  float: left
+}
+.cookie{
+  background: url('../images/common/cookie.png') no-repeat;
+  width: 47px;
+}
+.cookie_close a{
+  background: url('../images/common/cookie_close.png') no-repeat;
+  width: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  display: block;
+  height: 16px;
+}

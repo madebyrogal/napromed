@@ -1,0 +1,31 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           mail_data
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          mail_data
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Nowe ustawienia, credentials: admin }
+        _delete:          { credentials: admin }
+      fields:  
+        type:             { label: Typ }
+        email_from:       { label: E-mail From }
+        name_from:        { label: Name From }
+        subject:          { label: Temat wiadomości }
+        body:             { label: Treść wiadomości }
+      list:    
+        title:            Ustawienia wiadomości
+      filter:  ~
+      form:    ~
+      edit:    
+        title:            Edycja wiadomości - %%type%%
+      new:     
+        title:            Dodaj nową wiadomość

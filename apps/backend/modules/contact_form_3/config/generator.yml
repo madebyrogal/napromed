@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           contact_form_3
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          contact_form_3
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Dodaj kontakt, credentials: admin }
+      fields:  
+        name:             { label: Imię i nazwisko }
+        firm:             { label: Firma }
+        phone:            { label: Telefon }
+        email:            { label: E-mail }
+        message:          { label: Wiadomość }
+        created_at:       { label: Data utworzenia }
+        updated_at:       { label: Data modyfikacji }
+      list:    
+        title:            Kontakt
+        display:          [name,phone,email,created_at]
+        object_actions:
+          show:           { label: Pokaż }
+          _edit:          ~
+          _delete:        ~
+      filter:  ~
+      form:    ~
+      edit:    ~       
+      new:     ~

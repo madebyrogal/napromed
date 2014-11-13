@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           carousel_home
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          carousel_home
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Dodaj karuzele, credentials: admin }
+        _delete:          { credentials: admin }
+      fields:  
+        name:             { label: Nazwa }
+        number_of_slides: { label: Liczba slajdów }
+        type:             { label: Typ, help: Rodzaj wyświetlania slajdów }
+        hidden:           { label: Ukryta }
+      list:    
+        title:            Karuzela strony głównej
+        display:          [name, number_of_slides, _type, hidden]
+        batch_actions:    {}
+      filter:  ~
+      form:    ~
+      edit:    
+        title:            Edycja karuzeli - %%name%%
+      new:     
+        title:            Dodaj nową karuzelę

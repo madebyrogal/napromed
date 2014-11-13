@@ -1,0 +1,28 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           faq
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          faq
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Dodaj pytanie }
+      fields:
+        title:            { label: Pytanie }
+        body:             { label: Odpowiedź }
+        hidden:           { label: Ukryte }
+      list:    
+        title:            FAQ
+      filter:  ~
+      form:    ~
+      edit: 
+        title:            Edycja pytania
+      new:     
+        title:            Dodaj nowe pytanie
