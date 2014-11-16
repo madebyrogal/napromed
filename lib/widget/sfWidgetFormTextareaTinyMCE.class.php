@@ -38,8 +38,8 @@ class sfWidgetFormTextareaTinyMCE extends sfWidgetFormTextarea
   protected function configure($options = array(), $attributes = array())
   {
     $this->addOption('theme', 'advanced');
-    $this->addOption('width');
-    $this->addOption('height');
+    $this->addOption('width', '700');
+    $this->addOption('height', '500');
     $this->addOption('config', '');
   }
 
@@ -60,20 +60,24 @@ class sfWidgetFormTextareaTinyMCE extends sfWidgetFormTextarea
     $js = sprintf(<<<EOF
 <script type="text/javascript">
   tinyMCE.init({
-    relative_urls :                    false,
-    convert_urls :                     false,
-    mode:                              "exact",
-    plugins : "advhr, advimage, advlink, advlist, autoresize, contextmenu, directionality, emotions, example, fullscreen, iespell, inlinepopups, insertdatetime, layer, legacyoutput, media, nonbreaking, noneditable, pagebreak, paste, preview, print, save, searchreplace, spellchecker, style, tabfocus, table, template, visualchars, wordcount, xhtmlxtras", 
-    elements:                          "%s",
-    theme:                             "%s",
-    theme_advanced_buttons4 : "tablecontrols",
+    relative_urls: false,
+    convert_urls: false,
+    mode: "exact",
+    plugins: "advhr, advimage, advlink, advlist, autolink, contextmenu, directionality, emotions, example, fullscreen, iespell, inlinepopups, insertdatetime, layer, legacyoutput, media, nonbreaking, noneditable, pagebreak, paste, preview, print, save, searchreplace, spellchecker, style, tabfocus, table, template, visualchars, wordcount, xhtmlxtras", 
+    elements: "%s",
+    theme: "%s",
+    theme_advanced_buttons1: "pastetext,pasteword,selectall,|,bold,italic,underline,strikethrough,|,justifyleft,justifyright,justifycenter,justifyfull,|,bullist,numlist,|,outdent,indent,|,cut,copy,paste,undo,redo,|,link,unlink,|,search,replace,|,nonbreaking",
+    theme_advanced_buttons2: "image,cleanup,hr,|,removeformat,formatselect,fontselect,fontsizeselect,|,sub,sup,|,forecolor,backcolor,|,charmap,visualaid,anchor,blockquote,code",
+    theme_advanced_buttons3: "tablecontrols",
     %s
     %s
-    theme_advanced_toolbar_location:   "top",
-    theme_advanced_toolbar_align:      "left",
+    theme_advanced_toolbar_location: "top",
+    theme_advanced_toolbar_align: "left",
     theme_advanced_statusbar_location: "bottom",
-    theme_advanced_resizing:           true,
-    file_browser_callback : "tinyBrowser"
+    theme_advanced_resizing_min_width : 320,    
+    theme_advanced_resizing_min_height : 240,
+    theme_advanced_resizing: true,
+    file_browser_callback: "tinyBrowser"
     %s
   });
 </script>
@@ -81,8 +85,8 @@ EOF
     ,
       $this->generateId($name),
       $this->getOption('theme'),
-      $this->getOption('width')  ? sprintf('width:                             "%spx",', $this->getOption('width')) : '',
-      $this->getOption('height') ? sprintf('height:                            "%spx",', $this->getOption('height')) : '',
+      $this->getOption('width')  ? sprintf('width: "%s",', $this->getOption('width')) : '',
+      $this->getOption('height') ? sprintf('height: "%s",', $this->getOption('height')) : '',
       $this->getOption('config') ? ",\n".$this->getOption('config') : ''
     );
 

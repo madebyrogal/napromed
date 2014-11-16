@@ -17,6 +17,14 @@ class pageTable extends Doctrine_Table
         return Doctrine_Core::getTable('page');
     }
     
+    public static function getMainPage(){
+      return Doctrine_Query::create()
+              ->from('page')
+              ->andWhere('parent_id = ?', 1)
+              ->orderBy('position ASC')
+              ->execute();
+    }
+    
     public static function getMenuHeader(){
       return Doctrine_Query::create()
               ->from('page')

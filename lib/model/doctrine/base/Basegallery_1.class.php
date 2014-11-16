@@ -13,7 +13,7 @@
  * @method gallery_1 setName()   Sets the current record's "name" value
  * @method gallery_1 setHidden() Sets the current record's "hidden" value
  * 
- * @package    tnt
+ * @package    madebyrogal
  * @subpackage model
  * @author     Tomasz ROGALSKI rogalski.tomaszek@gmail.com
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

@@ -205,6 +205,20 @@ faq:
     body:                   { type: string, notnull: false }
     hidden:                 { type: boolean, default: 0 }
 
+#Słownik
+dictionary:
+  actAs:                    
+    I18n:
+      fields:               [title, body]
+      actAs:
+        Sluggable: 
+          fields:           [title] 
+          uniqueBy:         [lang,title]
+  columns:
+    title:                  { type: string(255), notnull: true }
+    body:                   { type: string, notnull: false }
+    hidden:                 { type: boolean, default: 0 }
+
 # ----------------------------- PRODUKTY --------------------------------------------------------------------------------------------------#
 #Kategorie produktów
 product_categories:

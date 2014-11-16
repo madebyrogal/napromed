@@ -40,6 +40,14 @@ class pageComponents extends sfComponents {
                 $page = pageTable::getPageByRouteHash('article');
                 $this->activePageId = $page->getId();
                 break;
+            case 'faq':
+                $page = pageTable::getPageByRouteHash('faq');
+                $this->activePageId = $page->getId();
+                break;
+            case 'dictionary':
+                $page = pageTable::getPageByRouteHash('dictionary');
+                $this->activePageId = $page->getId();
+                break;
             default:
                 $page = pageTable::getInstance()->findOneBy('id', $request->getParameter('id'));
                 if($page && $page->getParentId() > 1){

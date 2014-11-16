@@ -199,7 +199,8 @@ class textActions extends autoTextActions {
             } else {
                 $this->getUser()->setFlash('notice', $notice);
 
-                $this->redirect(array('sf_route' => 'text_edit', 'sf_subject' => $text));
+                //$this->redirect(array('sf_route' => 'text_list', 'sf_subject' => $text));
+                $this->redirect('@text_list' . '?parent_id=' . $this->getUser()->getAttribute('textParent') . '&moduleName=' . $this->getUser()->getAttribute('textModule') );
             }
         } else {
             $this->getUser()->setFlash('error', 'The item has not been saved due to some errors.', false);

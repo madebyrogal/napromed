@@ -16,7 +16,7 @@
  * @method newsletter_address setHash()    Sets the current record's "hash" value
  * @method newsletter_address setConfirm() Sets the current record's "confirm" value
  * 
- * @package    tnt
+ * @package    madebyrogal
  * @subpackage model
  * @author     Tomasz ROGALSKI rogalski.tomaszek@gmail.com
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

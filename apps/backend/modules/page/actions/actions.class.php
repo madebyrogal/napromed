@@ -13,24 +13,15 @@ require_once dirname(__FILE__) . '/../lib/pageGeneratorHelper.class.php';
  */
 class pageActions extends autoPageActions {
   
-  protected function buildQuery()
+  public function executeIndex(sfWebRequest $request)
   {
-    $tableMethod = $this->configuration->getTableMethod();
-    $query = Doctrine_Core::getTable('page')
-      ->createQuery('a');
-
-    if ($tableMethod)
-    {
-      $query = Doctrine_Core::getTable('page')->$tableMethod($query);
-    }
-
-    $this->addSortQuery($query);
-    $query->orderBy('position ASC, parent_id ASC');
-    
-    $event = $this->dispatcher->filter(new sfEvent($this, 'admin.build_query'), $query);
-    $query = $event->getReturnValue();
-
-    return $query;
+      $pages = array();
+      $pagesMain = pageTable::getMainPage();
+      foreach($pagesMain as $key => $pageMain){
+          $pages[$key]['page'] = $pageMain;
+          $pages[$key]['subpage'] = pageTable::getSubPage($pageMain);
+      }
+      $this->pages = $pages;
   }
   
   public function executePromote() {

@@ -22,7 +22,7 @@
  * @method meta_tag setDescription() Sets the current record's "description" value
  * @method meta_tag setKeyWords()    Sets the current record's "key_words" value
  * 
- * @package    tnt
+ * @package    madebyrogal
  * @subpackage model
  * @author     Tomasz ROGALSKI rogalski.tomaszek@gmail.com
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

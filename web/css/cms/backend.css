@@ -208,6 +208,17 @@ h1, #sf_admin_container h1{
 #menuLeft > ul > li .menuIcon.faq{
   background: url('../../images/cms/icons/faq.png') no-repeat scroll 5px center transparent;
 }
+#menuLeft > ul > li .menuIcon.dictionary{
+  background: url('../../images/cms/icons/slownik.png') no-repeat scroll 5px center transparent;
+}
+
+.sf_admin_row td.sf_admin_text a.open{
+    padding-left: 20px;
+    min-height: 16px;
+    display: block;
+    cursor: pointer;
+    background: url('../../images/cms/icons/strzalka_prawo.png') no-repeat transparent;
+}
 
 #contentWrapper{
   float: left;
@@ -602,4 +613,7 @@ ul.contacts li.mail{
 }
 .right{
   float: right;
+}
+.hidden{
+    display: none;
 }

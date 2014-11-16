@@ -42,6 +42,16 @@ conversions:
   url:      /przeliczniki.html  
   param:    { module: conversions, action: index }
 
+#FAQ
+faq:
+  url:      /naprotechnologia-faq.html
+  param:    { module: faq, action: index }
+  
+#FAQ
+dictionary:
+  url:      /naprotechnologia-slownik.html
+  param:    { module: dictionary, action: index }
+
 # Kontakt
 contact:
   url:      /kontakt.html

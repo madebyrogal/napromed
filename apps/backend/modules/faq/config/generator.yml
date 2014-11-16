@@ -20,6 +20,7 @@ generator:
         hidden:           { label: Ukryte }
       list:    
         title:            FAQ
+        display:            [_title, hidden]
       filter:  ~
       form:    ~
       edit: 

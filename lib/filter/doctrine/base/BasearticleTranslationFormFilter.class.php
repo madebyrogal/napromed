@@ -3,7 +3,7 @@
 /**
  * articleTranslation filter form base class.
  *
- * @package    tnt
+ * @package    madebyrogal
  * @subpackage filter
  * @author     Tomasz ROGALSKI rogalski.tomaszek@gmail.com
  * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $

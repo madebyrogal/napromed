@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           dictionary
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          dictionary
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Dodaj tłumaczenie }
+      fields:
+        title:            { label: Tytuł }
+        body:             { label: Definicja }
+        hidden:           { label: Ukryte }
+      list:    
+        title:            Słownik
+        display:          [_title, hidden]
+      filter:  ~
+      form:    ~
+      edit: 
+        title:            Edycja słownika
+      new:     
+        title:            Dodaj nowe słowo

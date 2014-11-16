@@ -37,6 +37,6 @@
         <?php //include_partial('main/cookieAlert') ?>
         <?php include_component('main', 'headerHP') ?>
         <?= $sf_content ?>
-        <?php include_component('main', 'footer') ?>
+        <?php include_component('main', 'footerHP') ?>
     </body>
 </html>

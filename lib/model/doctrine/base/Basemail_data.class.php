@@ -25,7 +25,7 @@
  * @method mail_data setBody()       Sets the current record's "body" value
  * @method mail_data setPhone()      Sets the current record's "phone" value
  * 
- * @package    tnt
+ * @package    madebyrogal
  * @subpackage model
  * @author     Tomasz ROGALSKI rogalski.tomaszek@gmail.com
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

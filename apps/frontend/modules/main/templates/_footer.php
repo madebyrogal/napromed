@@ -1,4 +1,5 @@
-<footer class="clearfix">
+<div class="clearfix"></div>
+<footer class="clearfix footer-other">
     <!-- Dynamic links -->
     <div class="wrapper">
         <ul>

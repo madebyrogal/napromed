@@ -1,3 +1,12 @@
+dictionary:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                dictionary
+    module:               dictionary
+    prefix_path:          /dictionary
+    column:               id
+    with_wildcard_routes: true
+
 faq:
   class: sfDoctrineRouteCollection
   options:

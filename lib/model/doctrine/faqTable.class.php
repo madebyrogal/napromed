@@ -16,4 +16,13 @@ class faqTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('faq');
     }
+    
+    public static function getAllFaq(){
+        $q = Doctrine_Query::create()
+                ->from('faq')
+                ->where('hidden = ?', 0)
+                ->execute();
+        
+        return $q;
+    }
 }

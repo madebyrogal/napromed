@@ -1,1 +1,1 @@
-<?= $page->getTitle('pl') ?>
+<?= $page['page']->getTitle('pl') ?>

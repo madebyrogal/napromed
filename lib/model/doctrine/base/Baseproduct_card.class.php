@@ -19,7 +19,7 @@
  * @method product_card setOpis2()  Sets the current record's "opis_2" value
  * @method product_card setHidden() Sets the current record's "hidden" value
  * 
- * @package    tnt
+ * @package    madebyrogal
  * @subpackage model
  * @author     Tomasz ROGALSKI rogalski.tomaszek@gmail.com
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

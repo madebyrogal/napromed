@@ -22,7 +22,7 @@
  * @method media_size setMin3()          Sets the current record's "min3" value
  * @method media_size setModuleCms()     Sets the current record's "module_cms" value
  * 
- * @package    tnt
+ * @package    madebyrogal
  * @subpackage model
  * @author     Tomasz ROGALSKI rogalski.tomaszek@gmail.com
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $

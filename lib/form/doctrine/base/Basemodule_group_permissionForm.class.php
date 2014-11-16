@@ -5,7 +5,7 @@
  *
  * @method module_group_permission getObject() Returns the current form's model object
  *
- * @package    tnt
+ * @package    madebyrogal
  * @subpackage form
  * @author     Tomasz ROGALSKI rogalski.tomaszek@gmail.com
  * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $

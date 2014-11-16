@@ -40,6 +40,12 @@ class mainComponents extends sfComponents {
     //strony do dynamicznych linków
     $this->pages = pageTable::getPageToDynamicFooter(4);
   }
+  
+  public function executeFooterHP() {
+    $gallery = gallery_1Table::getGallery('Nasze portfolio');
+    //strony do dynamicznych linków
+    $this->pages = pageTable::getPageToDynamicFooter(4);
+  }
 }
 
 ?>
