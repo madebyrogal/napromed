@@ -5,6 +5,7 @@ $(document).ready(function () {
     menuStatic();
     //tab();
     faq();
+    listenAnchorUrl();
     //contactSend();
 });
 
@@ -215,5 +216,15 @@ function ciasteczka(a)
             $('#ciasteczka_alert').hide();
         else
             $('#ciasteczka_alert').show();
+    }
+}
+//Nasłuchuje anchora w linku
+function listenAnchorUrl() {
+    if (window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        $('.faq li div').slideUp();
+        $('.faq ul li').removeClass('active');
+        $('#'+hash).parent().addClass('active');
+        $('#'+hash).next('div').slideDown();
     }
 }

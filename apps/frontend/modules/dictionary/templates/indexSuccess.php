@@ -4,7 +4,7 @@
 <ul>
     <?php foreach($dictionary as $i => $d):?>
     <li>
-        <h2>
+        <h2 id="<?= $d->getSlug()?>">
             <?= $d->getTitle()?>
             <span>pokaż</span>
         </h2>
