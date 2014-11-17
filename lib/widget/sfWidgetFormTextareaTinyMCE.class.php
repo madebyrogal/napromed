@@ -18,46 +18,46 @@
  * @author     Fabien Potencier <fabien.potencier@symfony-project.com>
  * @version    SVN: $Id: sfWidgetFormTextareaTinyMCE.class.php 17192 2009-04-10 07:58:29Z fabien $
  */
-class sfWidgetFormTextareaTinyMCE extends sfWidgetFormTextarea
-{
-  /**
-   * Constructor.
-   *
-   * Available options:
-   *
-   *  * theme:  The Tiny MCE theme
-   *  * width:  Width
-   *  * height: Height
-   *  * config: The javascript configuration
-   *
-   * @param array $options     An array of options
-   * @param array $attributes  An array of default HTML attributes
-   *
-   * @see sfWidgetForm
-   */
-  protected function configure($options = array(), $attributes = array())
-  {
-    $this->addOption('theme', 'advanced');
-    $this->addOption('width', '700');
-    $this->addOption('height', '500');
-    $this->addOption('config', '');
-  }
+class sfWidgetFormTextareaTinyMCE extends sfWidgetFormTextarea {
 
-  /**
-   * @param  string $name        The element name
-   * @param  string $value       The value selected in this widget
-   * @param  array  $attributes  An array of HTML attributes to be merged with the default HTML attributes
-   * @param  array  $errors      An array of errors for the field
-   *
-   * @return string An HTML tag string
-   *
-   * @see sfWidgetForm
-   */
-  public function render($name, $value = null, $attributes = array(), $errors = array())
-  {
-    $textarea = parent::render($name, $value, $attributes, $errors);
+    /**
+     * Constructor.
+     *
+     * Available options:
+     *
+     *  * theme:  The Tiny MCE theme
+     *  * width:  Width
+     *  * height: Height
+     *  * config: The javascript configuration
+     *
+     * @param array $options     An array of options
+     * @param array $attributes  An array of default HTML attributes
+     *
+     * @see sfWidgetForm
+     */
+    protected function configure($options = array(), $attributes = array()) {
+        $this->addOption('theme', 'advanced');
+        $this->addOption('width', '700');
+        $this->addOption('height', '500');
+        $this->addOption('config', '');
+    }
 
-    $js = sprintf(<<<EOF
+    /**
+     * @param  string $name        The element name
+     * @param  string $value       The value selected in this widget
+     * @param  array  $attributes  An array of HTML attributes to be merged with the default HTML attributes
+     * @param  array  $errors      An array of errors for the field
+     *
+     * @return string An HTML tag string
+     *
+     * @see sfWidgetForm
+     */
+    public function render($name, $value = null, $attributes = array(), $errors = array()) {
+
+        $this->generateLinks();
+        $textarea = parent::render($name, $value, $attributes, $errors);
+
+        $js = sprintf(<<<EOF
 <script type="text/javascript">
   tinyMCE.init({
     relative_urls: false,
@@ -77,19 +77,34 @@ class sfWidgetFormTextareaTinyMCE extends sfWidgetFormTextarea
     theme_advanced_resizing_min_width : 320,    
     theme_advanced_resizing_min_height : 240,
     theme_advanced_resizing: true,
+    external_link_list_url : "/js/tiny_mce/external-url.js",
     file_browser_callback: "tinyBrowser"
     %s
   });
 </script>
 EOF
-    ,
-      $this->generateId($name),
-      $this->getOption('theme'),
-      $this->getOption('width')  ? sprintf('width: "%s",', $this->getOption('width')) : '',
-      $this->getOption('height') ? sprintf('height: "%s",', $this->getOption('height')) : '',
-      $this->getOption('config') ? ",\n".$this->getOption('config') : ''
-    );
+                , $this->generateId($name), $this->getOption('theme'), $this->getOption('width') ? sprintf('width: "%s",', $this->getOption('width')) : '', $this->getOption('height') ? sprintf('height: "%s",', $this->getOption('height')) : '', $this->getOption('config') ? ",\n" . $this->getOption('config') : ''
+        );
 
-    return $textarea.$js;
-  }
+        return $textarea . $js;
+    }
+    
+    private function generateLinks(){        
+        if(sfConfig::get('sf_environment') == 'dev'){
+            $dictUrl = "frontend_dev.php/naprotechnologia-slownik.html";
+        }
+        else{
+            $dictUrl = "/naprotechnologia-slownik.html";
+        }
+        $dictionary = dictionaryTable::getAll();
+        $js = "var tinyMCELinkList  = new Array(";
+        foreach($dictionary as $dict){
+            $url = $dictUrl.'#'.$dict->getSlug();
+            $js .= "['Słownik - {$dict->getTitle()}', '{$url}'],";
+        }
+        $js = substr($js, 0, strlen($js)-1);
+        $js .= ");";
+        file_put_contents(sfConfig::get('sf_web_dir').'/js/tiny_mce/external-url.js', $js);
+    }
+
 }

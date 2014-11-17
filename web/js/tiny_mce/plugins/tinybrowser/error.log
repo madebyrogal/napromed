@@ -1,2 +1,3 @@
 2012-09-18 14:36:52 (CEST)	2 Warning	imagepng() [<a href='function.imagepng'>function.imagepng</a>]: Unable to open 'E:/www/tnt/web/useruploads/images/_thumbs/_doc.png' for writing: No such file or directory	File: fns_tinybrowser.php	Line: 114	
 2013-03-07 21:51:45 (CET)	2 Warning	rmdir(E:/www/wozki-pl/web/useruploads/images/wozki/bauman_gs_60_12_40/) [<a href='function.rmdir'>function.rmdir</a>]: Directory not empty	File: folders.php	Line: 81	
+2014-11-17 14:04:13 (CET)	2 Warning	imagejpeg() [<a href='function.imagejpeg'>function.imagejpeg</a>]: Unable to open 'E:/www/napromed/web/useruploads/images/_thumbs/_mapa.jpg' for writing: No such file or directory	File: fns_tinybrowser.php	Line: 103	
