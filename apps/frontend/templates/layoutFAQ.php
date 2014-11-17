@@ -7,12 +7,12 @@
         <?php include_stylesheets() ?>
         <?php include_javascripts() ?>
     </head>
-    <body>
+    <body class="static">
         <header id="top">
             <div class="wrapper clearfix">
                 <a id="logo" title="Strona główna" href="<?= url_for('@homepage') ?>">
                     <?= image_tag('logo_color.png', array('alt' => 'Logo')) ?>
-                    <div class="about">
+                    <div class="name">
                         <p><b>NaProMED</b><p> 
                         <p>Prywatna Praktyka Lekarska</p> 
                         <p>Piotr Broda</p>
@@ -29,7 +29,7 @@
                 <?php include_component('page', 'showMenuHeader') ?>
                 <?php include_component('page', 'showContactDetals') ?>                
             </aside>
-            <section class="static faq">
+            <section class="content faq">
                 <?= $sf_content ?>                
             </section>
         </div>

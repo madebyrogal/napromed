@@ -4,7 +4,7 @@
 <ul>
     <?php foreach($faq as $i => $f):?>
     <li>
-        <h2 <?php if($i%2 == 0):?>class="odd"<?php endif;?>>
+        <h2>
             <?= $f->getTitle()?>
             <span>pokaż</span>
         </h2>

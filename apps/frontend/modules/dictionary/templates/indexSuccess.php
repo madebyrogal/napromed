@@ -4,7 +4,7 @@
 <ul>
     <?php foreach($dictionary as $i => $d):?>
     <li>
-        <h2 <?php if($i%2 == 0):?>class="odd"<?php endif;?>>
+        <h2>
             <?= $d->getTitle()?>
             <span>pokaż</span>
         </h2>

@@ -138,16 +138,16 @@ function tab() {
 
 //Rozwijane opisy w faq
 function faq() {
-    $('.faq ul li').click(function (e) {
+    $('.faq ul li h2').click(function (e) {
         e.preventDefault();
-        if ($(this).children('h2').hasClass('active')) {
-            $(this).children('div').slideUp();
-            $(this).children('h2').removeClass('active');
+        if ($(this).parent().hasClass('active')) {
+            $(this).next('div').slideUp();
+            $(this).parent().removeClass('active');
         } else {
             $('.faq li div').slideUp();
-            $('.faq ul li h2').removeClass('active');
-            $(this).children('h2').addClass('active');
-            $(this).children('div').slideDown();
+            $('.faq ul li').removeClass('active');
+            $(this).parent().addClass('active');
+            $(this).next('div').slideDown();
         }
     });
 }
@@ -155,16 +155,14 @@ function faq() {
 function menu() {
     $('#nav').click(function (e) {
         e.preventDefault();
-        if ($(this).hasClass('close')) {
-            $('body').find('#top').removeClass('show').addClass('hide');
-            $('nav').removeClass('show').addClass('hide');
-            $('#nav').removeClass('close');
-        }
-        else {
-            $('body').find('#top').removeClass('hide').addClass('show');
-            $('nav').removeClass('hide').addClass('show');
-            $('#nav').addClass('close');
-        }
+        $('nav').removeClass('hide').addClass('show');
+        $('#nav').hide();
+    });
+
+    $('#close').click(function (e) {
+        e.preventDefault();
+        $('nav').removeClass('show').addClass('hide');
+        $('#nav').show();
     });
 
     /*$(window).resize(function() {
@@ -177,7 +175,7 @@ function menu() {
      });*/
 }
 
-function menuStatic(){
+function menuStatic() {
     $('aside ul li.more a.more').click(function (e) {
         e.preventDefault();
         if ($(this).parent().hasClass('active')) {

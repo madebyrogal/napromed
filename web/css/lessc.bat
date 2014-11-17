@@ -1,1 +1,0 @@
-C:\WINDOWS\system32\CMD.EXE /K "e:\Programy\Less\lessc.cmd --clean-css E:\www\napromed\web\css\main.less E:\www\napromed\web\css\main.css"
