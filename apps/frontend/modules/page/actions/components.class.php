@@ -45,7 +45,7 @@ class pageComponents extends sfComponents {
                 $this->activePageId = $page->getId();
                 break;
             case 'dictionary':
-                $page = pageTable::getPageByRouteHash('dictionary');
+                $page = pageTable::getPageByRouteHash('napotech');
                 $this->activePageId = $page->getId();
                 break;
             default:
