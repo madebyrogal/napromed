@@ -90,12 +90,7 @@ EOF
     }
     
     private function generateLinks(){        
-        if(sfConfig::get('sf_environment') == 'dev'){
-            $dictUrl = "frontend_dev.php/naprotechnologia-slownik.html";
-        }
-        else{
-            $dictUrl = "/naprotechnologia-slownik.html";
-        }
+        $dictUrl = "/naprotechnologia-slownik.html";
         $dictionary = dictionaryTable::getAll();
         $js = "var tinyMCELinkList  = new Array(";
         foreach($dictionary as $dict){
