@@ -50,6 +50,15 @@ ul {
         padding-left: 28px;
     }
 }
+ol {
+    li {
+        line-height: 29px;
+        padding-left: 10px;
+        ul li {
+            padding-left: 28px;
+        }
+    }
+}
 img {
     max-width: 100%;
 }
@@ -628,6 +637,9 @@ footer.footer-other{
                             background: url(../images/sprite.png) 9px -78px no-repeat;
                         }
                     }
+                    &:hover h2 span {
+                        background-position: 9px -78px;
+                    }
                 }
                 &:hover {
                     background: none;
@@ -635,7 +647,7 @@ footer.footer-other{
                         background: #339a99;
                         color: #fff;
                         span {
-                            background: url(../images/sprite.png) 9px -78px no-repeat;
+                            background: url(../images/sprite.png) 11px -154px no-repeat;
                         }
                     }
                 }
@@ -654,7 +666,7 @@ footer.footer-other{
                         overflow: hidden;
                         position: absolute;
                         text-indent: -999999px;
-                        top: 8px;
+                        top: 14px;
                         width: 30px;
                     }
                 }
