@@ -13,7 +13,7 @@ default:
     #robots:       index, follow
     viewport:      width=device-width, initial-scale=1
 
-  stylesheets:    [main.css]
+  stylesheets:    [main.css, style.css]
 
   javascripts:    [jquery.js, main.js, cookie/jquery.cookie.js, jquery.onepage-scroll.min.js]
 

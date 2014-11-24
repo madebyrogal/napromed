@@ -11,6 +11,11 @@ homepage:
   url:      /
   param:    { module: main, action: index }
 
+# Get File
+getFile:
+  url:      /pobierz.html
+  param:    { module: common, action: getFile }
+
 # Zmiana jezyka
 #changeLang:
 #  url:      /:slug/change_lang.html
@@ -47,11 +52,31 @@ faq:
   url:      /naprotechnologia-faq.html
   param:    { module: faq, action: index }
   
-#FAQ
+#Słownik
 dictionary:
   url:      /naprotechnologia-slownik.html
   param:    { module: dictionary, action: index }
 
+#Do pobrania
+download:
+  url:      /naprotechnologia-do-pobrania.html
+  param:    { module: download, action: index }
+
+# Przeliczniki - Hormony
+conversions_hormons:
+  url:      /naprotechnologia-przeliczniki-hormony.html
+  param:    { module: przeliczniki, action: hormon }
+
+# Przeliczniki - Indeksy hormonalne
+conversions_hormons_complex:
+  url:      /naprotechnologia-przeliczniki-indeksy-hormonalne.html
+  param:    { module: przeliczniki, action: hormonComplex }
+
+# Przeliczniki - Antropometria
+conversions_antropometria:
+  url:      /naprotechnologia-przeliczniki-antropometria.html
+  param:    { module: przeliczniki, action: antropometria }
+  
 # Kontakt
 contact:
   url:      /kontakt.html

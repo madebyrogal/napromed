@@ -48,6 +48,14 @@ class pageComponents extends sfComponents {
                 $page = pageTable::getPageByRouteHash('napotech');
                 $this->activePageId = $page->getId();
                 break;
+            case 'download':
+                $page = pageTable::getPageByRouteHash('napotech');
+                $this->activePageId = $page->getId();
+                break;
+            case 'przeliczniki':
+                $page = pageTable::getPageByRouteHash('conversions');
+                $this->activePageId = $page->getId();
+                break;
             default:
                 $page = pageTable::getInstance()->findOneBy('id', $request->getParameter('id'));
                 if($page && $page->getParentId() > 1){

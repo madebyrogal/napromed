@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           download
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          download
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: 
+        _new:             { label: Dodaj plik }
+      fields:
+        title:            { label: Tytuł }
+        file:             { label: Plik }
+        hidden:           { label: Ukryty }
+      list:    
+        title:            Pliki do pobrania
+        display:          [_title, file, hidden]
+      filter:  ~
+      form:    ~
+      edit: 
+        title:            Edycja pliku do pobrania %%name%%
+      new:     
+        title:            Dodaj nowy plik

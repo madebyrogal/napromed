@@ -211,6 +211,9 @@ h1, #sf_admin_container h1{
 #menuLeft > ul > li .menuIcon.dictionary{
   background: url('../../images/cms/icons/slownik.png') no-repeat scroll 5px center transparent;
 }
+#menuLeft > ul > li .menuIcon.download{
+  background: url('../../images/cms/icons/download.png') no-repeat scroll 5px center transparent;
+}
 
 .sf_admin_row td.sf_admin_text a.open{
     padding-left: 20px;

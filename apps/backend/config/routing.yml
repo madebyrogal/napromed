@@ -1,3 +1,12 @@
+download:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                download
+    module:               download
+    prefix_path:          /download
+    column:               id
+    with_wildcard_routes: true
+
 dictionary:
   class: sfDoctrineRouteCollection
   options:
