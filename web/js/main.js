@@ -7,6 +7,7 @@ $(document).ready(function () {
     faq();
     listenAnchorUrl();
     //contactSend();
+    hormons();
 });
 
 $(window).load(function () {
@@ -31,6 +32,22 @@ $(window).load(function () {
         });
     }
 });
+
+//Działanie hormonów
+function hormons(){
+    $('#hormon').click(function(){
+       var hormonId = $(this).val();
+       $('.hormons').hide();
+       $('#'+hormonId).show();
+    });
+    //ESTRADIOL
+    $('#estVal').keyup(function(){
+        var unitArray = {};
+        unitArray['pn']
+        var val = $(this).val();
+        
+    });
+}
 
 function contactSend() {
     $('#send').click(function (e) {

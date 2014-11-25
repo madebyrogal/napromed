@@ -6,7 +6,7 @@
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
@@ -376,7 +376,7 @@ CREATE TABLE IF NOT EXISTS `dictionary_translation` (
   CONSTRAINT `dictionary_translation_id_dictionary_id` FOREIGN KEY (`id`) REFERENCES `dictionary` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.dictionary_translation: ~17 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.dictionary_translation: ~16 rows (około)
 /*!40000 ALTER TABLE `dictionary_translation` DISABLE KEYS */;
 INSERT INTO `dictionary_translation` (`id`, `title`, `body`, `lang`, `slug`) VALUES
 	(1, 'PCO', '<p>Zesp&oacute;ł policystycznych jajnik&oacute;w (PCO) jest bardzo często powiązany z&nbsp;niepłodnością. Wynika to stąd, że jajniki nie funkcjonują prawidłowo, a owulacja pojawia się nieregularnie. Dlatego kobiety cierpiące na zesp&oacute;ł policystycznych jajnik&oacute;w mają zazwyczaj długie i&nbsp;nieregularne cykle menstruacyjne.</p>\r\n<p>Wiele lat temu syndrom ten identyfikowano jako zesp&oacute;l Steina-Leventhala. Był on związany z&nbsp;brakiem miesiączki, otyłością, nadmiernym owłosieniem ciała, nadciśnieniem i&nbsp;niepłodnością a jajniki podczas przeprowadzanych operacji opisywano jako porcelanowe z licznymi drobnymi torbielkami na obwodzie. Wsp&oacute;łczesna nauka, dzięki badaniom hormonalnym, ultrasonograficznym i&nbsp;laparoskopowym pokazała, że większość kobiet cierpiąca z&nbsp;powodu zespołu policystycznych jajnik&oacute;w wcale nie jest otyła, nie ma nadciśnienia i&nbsp;występuje u&nbsp;nich miesiączka (choć mają długie i&nbsp;nieregularne cykle). Kobiety te mają natomiast bardzo często problem z&nbsp;płodnością.</p>\r\n<p>Obecnie uznaje się, że u samego podłoża tej endokrynopatii leży szereg czynnik&oacute;w wzajemnie na siebie wpływających i wywołujących patologiczne reakcje w mechanizmie tzw. błędnego koła. Początek kaskady tych niekorzystnych zdarzeń upatruje się w:</p>\r\n<ul>\r\n<li>Czynnikach genetycznych (mutacje w genie P450c-17 i 11 HSD-1)</li>\r\n<li>Wewnątrzmacicznej ekspozycji płodu dziewczęcego na wysokie poziomy androgen&oacute;w u matki</li>\r\n<li>Siedzący tryb życia</li>\r\n<li>Otyłość</li>\r\n</ul>\r\n<p><b>Diagnostyka zespołu policystycznych jajnik&oacute;w (PCO)</b></p>\r\n<p>Śledzenie cyklu menstruacyjnego jest bardzo ważne dla oceny zdrowia pacjentki, a następnie dla zastosowania odpowiedniego leczenia. Wymagane jest wykonanie pełnego profilu hormonalnego, badań USG, oceny owulacji. Powinien on zawierać badania hormon&oacute;w takich jak: FSH, LH, androstendionu, testosteronu, wolnego testosteronu, DHEA, prolaktyny, beta-endorfin, TSH, FT3, FT4, progesteronu i&nbsp;estradiolu. Należy jednak przede wszystkim zlecić wykonanie doustnego testu obciążenia glukozą z ocena poziomu insuliny w spoczynku i po teście z glukozą.</p>\r\n<p>Po wykonaniu tych badań możliwe jest wyeliminowanie niekt&oacute;rych przyczyn nieregularnych cykli i&nbsp;definitywnie zdiagnozowanie zespołu PCO. Dodatkowo wykonywane jest badanie ultrasonograficzne miednicy mniejszej. Jajniki kobiety z&nbsp;PCO często są o&nbsp;wiele większe i&nbsp;wielotorbielowate. W&nbsp;pewnych przypadkach przeprowadzana jest r&oacute;wnież diagnostyka laparoskopowa.</p>\r\n<p><b>Leczenie zespołu policystycznych jajnik&oacute;w (PCO)</b></p>\r\n<p>Jednym z&nbsp;pierwszych zadań w&nbsp;leczeniu zespołu policystycznych jajnik&oacute;w jest zmniejszenie produkcji męskich hormon&oacute;w poprzez redukcję hiperinsulinemii i insulinooporności.</p>\r\n<p>Uzyskuje się to farmakologicznie lub przez klinową resekcję jajnik&oacute;w. Leczeniu zawsze musi towarzyszyć zmiana stylu życia i zwiększony wydatek energetyczny. Leczenie operacyjne daje trwałe rezultaty w postaci przywr&oacute;cenia płodności i zniesieniu zaburzeń metabolicznych. Leczenie płodności można osiągnąć także przez stymulację owulacji np. Clostilbegytem. Wspomniana wyżej klinowa resekcja jajnik&oacute;w jest procedurą chirurgiczną polegającą na klinowym usunięciu części tkanki jajnika, przez co ulega on zmniejszeniu i&nbsp;poprawia się jego funkcjonowanie. Choć jest to operacja znana od dawna, obecnie powraca do łask, gdyż znacząco poprawiła się w&nbsp;medycynie zdolność do zapobiegania powstawaniu zrost&oacute;w. Dodatkowo, zabieg jest wyjątkowo skuteczny jeśli chodzi o&nbsp;obniżenie poziomu męskich hormon&oacute;w i&nbsp;regulację cyklu menstruacyjnego, co jednocześnie poprawia płodność i&nbsp;obniża ryzyko wystąpienia raka piersi i&nbsp;raka macicy.</p>\r\n<p>Wyniki leczenia niepłodności metodą NaProTECHNOLOGY opublikowane zostały w 2004 roku przez prof. Thomasa Hilgersa w <i><b>The Medical and Surgical Practice of NaProTECHNOLOGY</b></i> oraz w 2008 roku w publikacji Josepha B. Stanforda, MD,MSPH, Tracey A.Parnella, MD and Phila C. Boyle, MB w czasopiśmie medycznym <b>"Journal of the American Board of Family Medicine: Outcomes From Treatment of Infertility With Natural Procreative Technology in an Irish General Practice"</b>.</p>\r\n<p>Skumulowany wskaźnik ciąż dla pacjentek z zespołem policystycznych jajnik&oacute;w:</p>\r\n<ol>\r\n<li>40% po 12 miesiącach</li>\r\n<li>65% po 24 miesiącach</li>\r\n<li>do 90% po 48 miesiącach</li>\r\n</ol>\r\n<p><b>NaProTECHNOLOGY</b> okazuje się 2,67 razy bardziej skuteczna niż in vitro dla endometriozy, 2,36 razy dla PCOS i 1,41 razy dla niedrożności jajowod&oacute;w. W badaniu z Irlandii, w latach 1998-2002 zgłosiło się 1239 par małżeńskich z powodu niepłodności. Średni wiek kobiet to 35,8 lat, średnia długość trwania niepłodności 5,6 roku. 33% par wcześniej było leczonych ART. Wskaźnik ciąż <b>NaProTECHNOLOGY</b> wyni&oacute;sł 52%. Udało się pom&oacute;c około 30% par po niepowodzeniach ART, czyli technik wspomaganego rozrodu &bdquo;in vitro&rdquo;(J Am Board Fam Med 2008;21:375&ndash;384.).</p>\r\n<p>Szczeg&oacute;łowe badania nad skutecznością metody w przypadkach problem&oacute;w z płodnością dostępne są na stronie: <a href="http://naprotechnology.com/infertility.htm" target="_blank">http://naprotechnology.com/infertility.htm</a></p>', 'pl', 'pco'),
@@ -396,6 +396,43 @@ INSERT INTO `dictionary_translation` (`id`, `title`, `body`, `lang`, `slug`) VAL
 	(15, 'Niepłodność żeńska', '<p><b>Niepłodność żeńska</b> może dotyczyć zar&oacute;wno procesu powstawania oocytu, możliwości odbywania stosunku płciowego, drożności dr&oacute;g rodnych, stworzenia warunk&oacute;w do kontaktu plemnik&oacute;w z oocytem, aktywnego transportu zygoty do jamy macicy jak r&oacute;wnież implantacji &ndash; zagnieżdżenia nowego życia w organizmie matki. Zdolność do utrzymania nowego życia <i>(fecundity)</i> może być wikłana przez czynniki prowadzące do <b>poronienia</b> <i>(abortus)</i> czy wystąpienia <b>porodu przedwczesnego</b> <i>(partus praematurus, Praterm Labour PTL)</i> skutkującego nawet urodzeniem niezdolnego do przeżycia dziecka. Gdy do zgonu dziecka dochodzi wewnątrzmacicznie m&oacute;wi się o <b>wewnątrzmacicznym obumarciu</b> odpowiednio: zarodka <i>(poronienie zatrzymane, missed abortion)</i> lub płodu <i>(mors foetus intrauterina)</i>.&nbsp; Statystyki m&oacute;wią o 40% udziale czynnika żeńskiego w niepłodności małżeńskiej, dodatkowo u 20% par występuje łącznie żeński i męski czynnik odpowiedzialny za niepłodność.</p>\r\n<p><b>Najczęstsze przyczyny&nbsp;niepłodności&nbsp;kobiet:</b></p>\r\n<ul>\r\n<li>Zmiany anatomiczne dr&oacute;g rodnych (wrodzone i nabyte)</li>\r\n<li>Zaburzenia jajeczkowania (najczęściej zesp&oacute;ł PCO)</li>\r\n<li>Zaburzenia hormonalne (hiperprolaktynemia, zaburzenia fazy lutealnej, choroby tarczycy, nadnerczy)</li>\r\n<li>Zaburzenia immunologiczne (auto i alloimmunologiczne)</li>\r\n<li>Endometrioza (czynnik anatomiczny, zaburzenia jajeczkowania i czynnik immunologiczny)</li>\r\n</ul>', 'pl', 'nieplodnosc-zenska'),
 	(16, 'Niepłodność', '<p>Niepłodność można definiować:</p>\r\n<p align="center"><u>Ze względu na zakres niepłodności</u></p>\r\n<p><strong>Niepłodność całkowita</strong> (<em>sterilitas absoluta</em>), czyli stan w kt&oacute;rym nie ma fizycznej możliwości do zajścia czy utrzymania ciąży. Obejmuje to u kobiety stany takie jak: brak jajnik&oacute;w, jajowod&oacute;w, macicy czy pochwy, a także poważne wady tych narząd&oacute;w zar&oacute;wno o podłożu wrodzonym czy nabytym. U mężczyzny o niepłodności całkowitej m&oacute;wimy w sytuacji braku jąder (wada wrodzona czy bądź nabyta czyli kastracja)</p>\r\n<p><strong>Niepłodność względna </strong>(<em>sterilitas relativa </em>lub <em>sterilitas temporaria</em>) to stan w kt&oacute;rym istnieje pierwotna przyczyna dająca szansę na wyleczenie.</p>\r\n<p align="center"><u>Ze względu na czas wystąpienia</u></p>\r\n<p><strong>Niepłodność pierwotna</strong> <em>(sterilitas primaria) </em>to niemożność zajścia w ciążę kobiety, lub niemożność zapłodnienia przez mężczyznę, od rozpoczęcia wsp&oacute;łżycia.</p>\r\n<p><strong>Niepłodność wt&oacute;rna</strong> <em>(sterilitas secundaria)</em> to stan w kt&oacute;rym istniała potwierdzona wcześniej płodność, lecz została zahamowana. Może ona mieć podłoże chorobowe (czynnik jajowodowy, przebyte stany zapalne , zaburzenia czynnościowe i inne) lub jatrogenne, tzn. jako skutek działalności lekarskiej (obustronna kastracja, obliteracja jajowod&oacute;w, niepłodność po stosowaniu antykoncepcji i inne)</p>\r\n<p align="center"><u>Ze względu na pochodzenie</u></p>\r\n<p><strong>Niepłodność męska</strong></p>\r\n<p><strong>Niepłodność żeńska</strong></p>\r\n<p>Niemniej zar&oacute;wno płodność jak i niepłodność należy rozpatrywać w kontekście konkretnej pary małżeńskiej, czyli rozpoznawać:</p>\r\n<p><strong>Niepłodność małżeńska</strong> w klasycznej definicji&nbsp; to niemożność uzyskania ciąży po rocznym wsp&oacute;łżyciu w celu koncepcyjnym. Obecnie dotyka ona 18-20% małżeństw w Polsce.</p>\r\n<p align="center"><u>Ze względu na zakończenie diagnostyki</u></p>\r\n<p><strong>Niepłodność idiopatyczna</strong> to sytuacja w kt&oacute;rej dostępnymi metodami nie jesteśmy w stanie czy to postawić rozpoznania czy zastosować skutecznej terapii. Statystyki podają od 14 do 30% niepłodności w kt&oacute;rych medycyna nie jest w stanie pom&oacute;c żadnymi dostępnymi sposobami. W grupie niepłodności idiopatycznej z powodu braku powszechnych metod analitycznych wyr&oacute;żnia się zaburzenia układu odpornościowego: <strong>alloimmunologiczne </strong>&nbsp;kiedy kobieta wytwarza przeciwciała przeciwko plemnikom partnera, albo jest uczulona na pewne antygeny trofoblastu i reaguje zamknięciem naczyń odżywiających go, co z&nbsp;kolei powoduje obumarcie odżywianego za pomocą trofoblastu zarodka. Występują też zaburzenia <strong>autoimmunologiczne</strong>, kiedy reakcja immunologiczna skierowana jest przeciwko własnym kom&oacute;rkom własnych narząd&oacute;w co może prowadzić np. do wytworzenia przeciwciał przeciwjajnikowych i do przedwczesnej niewydolności&nbsp;jajnik&oacute;w.</p>\r\n<p><strong>Niepłodność</strong> (Sterilitas, infertilitas, infecundity) jest objawem wielu schorzeń i ich wymienienie przekracza ramy tego opracowania. Reasumując; każde ciężkie schorzenie, zwłaszcza przewlekłe obniża płodność. Istotą leczenia niepłodności jest rozpoznanie występujących schorzeń i właściwe ich leczenie by odtworzyć utraconą płodność.</p>', 'pl', 'nieplodnosc');
 /*!40000 ALTER TABLE `dictionary_translation` ENABLE KEYS */;
+
+
+-- Zrzut struktury tabela napromed_dev.download
+DROP TABLE IF EXISTS `download`;
+CREATE TABLE IF NOT EXISTS `download` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `file` text COLLATE utf8_polish_ci,
+  `hidden` tinyint(1) DEFAULT '0',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+-- Zrzucanie danych dla tabeli napromed_dev.download: ~1 rows (około)
+/*!40000 ALTER TABLE `download` DISABLE KEYS */;
+INSERT INTO `download` (`id`, `file`, `hidden`, `created_at`, `updated_at`) VALUES
+	(1, '/useruploads/files//in_vitro_contra_naprotechnologia.pdf', 0, '2014-11-23 14:27:09', '2014-11-23 14:27:09');
+/*!40000 ALTER TABLE `download` ENABLE KEYS */;
+
+
+-- Zrzut struktury tabela napromed_dev.download_translation
+DROP TABLE IF EXISTS `download_translation`;
+CREATE TABLE IF NOT EXISTS `download_translation` (
+  `id` bigint(20) NOT NULL DEFAULT '0',
+  `title` varchar(255) COLLATE utf8_polish_ci NOT NULL,
+  `lang` char(2) COLLATE utf8_polish_ci NOT NULL DEFAULT '',
+  `slug` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
+  PRIMARY KEY (`id`,`lang`),
+  UNIQUE KEY `download_translation_sluggable_idx` (`slug`,`lang`,`title`),
+  CONSTRAINT `download_translation_id_download_id` FOREIGN KEY (`id`) REFERENCES `download` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+-- Zrzucanie danych dla tabeli napromed_dev.download_translation: ~1 rows (około)
+/*!40000 ALTER TABLE `download_translation` DISABLE KEYS */;
+INSERT INTO `download_translation` (`id`, `title`, `lang`, `slug`) VALUES
+	(1, 'In vitro kontra naprotechnologia', 'pl', 'in-vitro-kontra-naprotechnologia');
+/*!40000 ALTER TABLE `download_translation` ENABLE KEYS */;
 
 
 -- Zrzut struktury tabela napromed_dev.faq
@@ -502,7 +539,7 @@ CREATE TABLE IF NOT EXISTS `mail_data` (
 -- Zrzucanie danych dla tabeli napromed_dev.mail_data: ~1 rows (około)
 /*!40000 ALTER TABLE `mail_data` DISABLE KEYS */;
 INSERT INTO `mail_data` (`id`, `type`, `email_from`, `name_from`, `phone`) VALUES
-	(1, 'kontakt', 'rogalski.tomaszek@gmail.com', 'Napromed - Naprotechnologia', '+48 651 589 65 89');
+	(1, 'kontakt', 'piotr_broda@poczta.onet.pl', 'Napromed - Naprotechnologia', '+48 501 040 908');
 /*!40000 ALTER TABLE `mail_data` ENABLE KEYS */;
 
 
@@ -643,9 +680,9 @@ CREATE TABLE IF NOT EXISTS `module_cms` (
   UNIQUE KEY `module_cms_position_sortable_idx` (`position`),
   KEY `module_group_id_idx` (`module_group_id`),
   CONSTRAINT `module_cms_module_group_id_module_group_id` FOREIGN KEY (`module_group_id`) REFERENCES `module_group` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.module_cms: ~20 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.module_cms: ~21 rows (około)
 /*!40000 ALTER TABLE `module_cms` DISABLE KEYS */;
 INSERT INTO `module_cms` (`id`, `name`, `route_name`, `module_group_id`, `hidden`, `position`) VALUES
 	(1, 'Strony', 'page', 1, 0, 1),
@@ -662,12 +699,13 @@ INSERT INTO `module_cms` (`id`, `name`, `route_name`, `module_group_id`, `hidden
 	(12, 'Karuzela Home', 'carousel_home', 6, 0, 12),
 	(13, 'Galerie', 'gallery_1', 6, 1, NULL),
 	(14, 'Ustawienia wiadomości', 'mail_data', 7, 0, 13),
-	(15, 'Formularz kontaktowy', 'contact_form_1', 7, 0, NULL),
+	(15, 'Formularz kontaktowy', 'contact_form_1', 7, 1, NULL),
 	(16, 'Kontakt - Obiekty komercyjne', 'contact_form_2', 7, 1, NULL),
 	(17, 'Kontakt - Kontakt', 'contact_form_3', 7, 1, NULL),
 	(18, 'Biura', 'product_card', 1, 1, NULL),
 	(19, 'FAQ', 'faq', 1, 0, 14),
-	(20, 'Słownik', 'dictionary', 1, 0, 15);
+	(20, 'Słownik', 'dictionary', 1, 0, 15),
+	(21, 'Do pobrania', 'download', 1, 0, 16);
 /*!40000 ALTER TABLE `module_cms` ENABLE KEYS */;
 
 
@@ -737,9 +775,9 @@ CREATE TABLE IF NOT EXISTS `module_permission` (
   KEY `module_id_idx` (`module_id`),
   CONSTRAINT `module_permission_module_id_module_cms_id` FOREIGN KEY (`module_id`) REFERENCES `module_cms` (`id`),
   CONSTRAINT `module_permission_permission_id_sf_guard_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `sf_guard_permission` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.module_permission: ~34 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.module_permission: ~36 rows (około)
 /*!40000 ALTER TABLE `module_permission` DISABLE KEYS */;
 INSERT INTO `module_permission` (`id`, `module_id`, `permission_id`) VALUES
 	(1, 1, 1),
@@ -775,7 +813,9 @@ INSERT INTO `module_permission` (`id`, `module_id`, `permission_id`) VALUES
 	(32, 19, 1),
 	(33, 19, 2),
 	(34, 20, 1),
-	(35, 20, 2);
+	(35, 20, 2),
+	(36, 21, 1),
+	(37, 21, 2);
 /*!40000 ALTER TABLE `module_permission` ENABLE KEYS */;
 
 
@@ -848,9 +888,9 @@ CREATE TABLE IF NOT EXISTS `page` (
   UNIQUE KEY `page_position_sortable_idx` (`position`,`parent_id`),
   KEY `parent_id_idx` (`parent_id`),
   CONSTRAINT `page_parent_id_page_id` FOREIGN KEY (`parent_id`) REFERENCES `page` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.page: ~20 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.page: ~21 rows (około)
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
 INSERT INTO `page` (`id`, `layout`, `route_name`, `route_hash`, `parent_id`, `hidden`, `not_in_menu`, `absolute_link`, `position`) VALUES
 	(1, 'layoutHP', 'root', 'homepage', NULL, 0, 0, NULL, 1),
@@ -866,13 +906,14 @@ INSERT INTO `page` (`id`, `layout`, `route_name`, `route_hash`, `parent_id`, `hi
 	(16, 'layout', 'staticPage', 'infertility_men', 15, 0, 0, '', 12),
 	(17, 'layout', 'staticPage', 'infertility_women', 15, 0, 0, '', 13),
 	(18, 'layout', 'conversions', 'conversions', 1, 0, 0, '', 13),
-	(19, 'layout', 'staticPage', 'conversions_hormons', 18, 0, 0, '', 19),
-	(20, 'layout', 'staticPage', 'conversions_hormons_complex', 18, 0, 0, '', 20),
-	(21, 'layout', 'staticPage', 'conversions_antropometria', 18, 0, 0, '', 21),
+	(19, 'layout', 'conversions_hormons', 'conversions_hormons', 18, 0, 0, '', 19),
+	(20, 'layout', 'conversions_hormons_complex', 'conversions_hormons_complex', 18, 0, 0, '', 20),
+	(21, 'layout', 'conversions_antropometria', 'conversions_antropometria', 18, 0, 0, '', 21),
 	(22, 'layoutFAQ', 'faq', 'faq', 1, 0, 0, '', 22),
 	(23, 'layout', 'contact', 'contact', 1, 0, 0, '', 23),
 	(24, 'layout', 'staticPage', 'infertility_general', 15, 0, 0, '', 11),
-	(27, 'layoutFAQ', 'dictionary', 'dictionary', 4, 0, 0, '', 10);
+	(27, 'layoutFAQ', 'dictionary', 'dictionary', 4, 0, 0, '', 10),
+	(28, 'layout', 'download', 'download', 4, 0, 0, '', 11);
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 
 
@@ -893,7 +934,7 @@ CREATE TABLE IF NOT EXISTS `page_translation` (
   CONSTRAINT `page_translation_id_page_id` FOREIGN KEY (`id`) REFERENCES `page` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.page_translation: ~20 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.page_translation: ~21 rows (około)
 /*!40000 ALTER TABLE `page_translation` DISABLE KEYS */;
 INSERT INTO `page_translation` (`id`, `title`, `subtitle`, `meta_title`, `meta_keywords`, `meta_description`, `template`, `lang`, `slug`) VALUES
 	(1, 'Home', '', 'Naprotechnologia', '', '', 'home', 'pl', 'napro'),
@@ -909,13 +950,14 @@ INSERT INTO `page_translation` (`id`, `title`, `subtitle`, `meta_title`, `meta_k
 	(16, 'Męska', '', 'Naprotechnologia  - Niepłodność męska - Napromed', '', '', 'staticPage', 'pl', 'nieplodnosc-meska'),
 	(17, 'Żeńska', '', 'Naprotechnologia - Niepłodność żeńska - Napromed', '', '', 'staticPage', 'pl', 'nieplodnosc-zenska'),
 	(18, 'Przeliczniki', '', 'Naprotechnologia - Przeliczniki - Napromed', '', '', 'index', 'pl', 'naprotechnologia-przeliczniki'),
-	(19, 'Hormony', '', 'Naprotechnologia - Przeliczniki hormony - Napromed', '', '', 'index', 'pl', 'naprotechnologia-przeliczniki-hormony'),
-	(20, 'Hormony złożone', '', 'Naprotechnologia - Przeliczniki hormony złożone - Napromed', '', '', 'index', 'pl', 'naprotechnologia-przeliczniki-hormony-zlozone'),
-	(21, 'Antropometria', '', 'Naprotechnologia - Przeliczniki antropometria - Napromed', '', '', 'index', 'pl', 'naprotechnologia-przeliczniki-antropometria'),
+	(19, 'Hormony', '', 'Naprotechnologia - Przeliczniki hormony - Napromed', '', '', 'hormon', 'pl', 'naprotechnologia-przeliczniki-hormony'),
+	(20, 'Indeksy hormonalne', '', 'Naprotechnologia - Przeliczniki indeksy hormonalne - Napromed', '', '', 'hormonComplex', 'pl', 'naprotechnologia-przeliczniki-indeksy-hormonalne'),
+	(21, 'Antropometria', '', 'Naprotechnologia - Przeliczniki antropometria - Napromed', '', '', 'antropometria', 'pl', 'naprotechnologia-przeliczniki-antropometria'),
 	(22, 'FAQ', '', 'Naprotechnologia - FAQ - Napromed', 'Naprotechnologia - FAQ - Napromed', 'Naprotechnologia - FAQ - Napromed', 'index', 'pl', 'naprotechnologia-faq'),
 	(23, 'Kontakt', '', 'Naprotechnologia - Kontakt - Napromed', '', '', 'index', 'pl', 'naprotechnologia-kontakt'),
 	(24, 'Niepłodność', 'Niepłodność', 'Naprotechnologia - Niepłodność - Napromed', 'niepłodność', 'niepłodność', 'staticPage', 'pl', 'nieplodnosc-1'),
-	(27, 'Słownik', '', 'Naprotechnologia - Słownik - Napromed', 'Słownik', 'Słownik', 'index', 'pl', 'slownik');
+	(27, 'Słownik', '', 'Naprotechnologia - Słownik - Napromed', 'Słownik', 'Słownik', 'index', 'pl', 'slownik'),
+	(28, 'Do pobrania', '', 'Naprotechnologia - Do pobrania - Napromed', 'download, downloads, do pobrania, materiały prasowe', 'Naprotechnologia - Do pobrania - Napromed', 'index', 'pl', 'do-pobrania');
 /*!40000 ALTER TABLE `page_translation` ENABLE KEYS */;
 
 
@@ -1155,7 +1197,7 @@ CREATE TABLE IF NOT EXISTS `sf_guard_user` (
 -- Zrzucanie danych dla tabeli napromed_dev.sf_guard_user: ~4 rows (około)
 /*!40000 ALTER TABLE `sf_guard_user` DISABLE KEYS */;
 INSERT INTO `sf_guard_user` (`id`, `first_name`, `last_name`, `email_address`, `username`, `algorithm`, `salt`, `password`, `is_active`, `is_super_admin`, `last_login`, `created_at`, `updated_at`) VALUES
-	(1, 'Tomasz', 'Rogalski', 'rogalski.tomaszek@gmail.com', 'admin', 'sha1', '1d494bdbba5a19a90d24ff50abb520ce', '9adad637317cc4ba87601de12b209d121be58a70', 1, 1, '2014-11-18 21:13:19', '2012-11-14 20:33:26', '2014-11-18 21:13:19'),
+	(1, 'Tomasz', 'Rogalski', 'rogalski.tomaszek@gmail.com', 'admin', 'sha1', '1d494bdbba5a19a90d24ff50abb520ce', '9adad637317cc4ba87601de12b209d121be58a70', 1, 1, '2014-11-24 20:14:51', '2012-11-14 20:33:26', '2014-11-24 20:14:52'),
 	(3, 'Joanna', 'Rogalska', 'rogalska.joasia@gmail.com', 'asia', 'sha1', '4963b9ec301b197d994a5acbd350a844', '93ebd8811fb1b117fd228d42d497a98554e80e5a', 1, 0, '2013-05-06 12:38:36', '2013-02-27 13:34:12', '2013-05-06 12:38:36'),
 	(4, 'Jolanta', 'Dec', 'jolantadecnieruchomosci@gmail.com', 'jola', 'sha1', 'f5d5bf0f8f982cd66a0d7e30e06b0baa', '9d5bba0d287f26d0b4f5b50e2a38d373c83e905f', 1, 0, '2014-04-25 19:59:55', '2014-02-11 23:06:57', '2014-04-25 19:59:55'),
 	(5, 'Artur', 'Dec', 'arturdec@gmail.com', 'artur', 'sha1', 'ff6f8430b8fcb5d46f45d7be58da368d', '847ce2bd1550a8d964ad49ec08321d9f042c9e16', 1, 0, NULL, '2014-02-11 23:09:16', '2014-02-11 23:09:16');
@@ -1215,9 +1257,9 @@ CREATE TABLE IF NOT EXISTS `text` (
   `parent_id` bigint(20) NOT NULL,
   `hidden` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.text: ~34 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.text: ~41 rows (około)
 /*!40000 ALTER TABLE `text` DISABLE KEYS */;
 INSERT INTO `text` (`id`, `module`, `parent_id`, `hidden`) VALUES
 	(33, 'page', 2, 0),
@@ -1253,7 +1295,14 @@ INSERT INTO `text` (`id`, `module`, `parent_id`, `hidden`) VALUES
 	(84, 'page', 17, 0),
 	(85, 'page', 22, 0),
 	(86, 'page', 3, 0),
-	(88, 'page', 27, 0);
+	(88, 'page', 27, 0),
+	(89, 'page', 23, 0),
+	(90, 'page', 23, 0),
+	(91, 'page', 23, 0),
+	(92, 'page', 19, 0),
+	(93, 'page', 20, 0),
+	(94, 'page', 21, 0),
+	(95, 'page', 28, 0);
 /*!40000 ALTER TABLE `text` ENABLE KEYS */;
 
 
@@ -1268,7 +1317,7 @@ CREATE TABLE IF NOT EXISTS `text_translation` (
   CONSTRAINT `text_translation_id_text_id` FOREIGN KEY (`id`) REFERENCES `text` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.text_translation: ~38 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.text_translation: ~43 rows (około)
 /*!40000 ALTER TABLE `text_translation` DISABLE KEYS */;
 INSERT INTO `text_translation` (`id`, `title`, `context`, `lang`) VALUES
 	(33, 'Home', '<p>Home</p>', 'pl'),
@@ -1304,7 +1353,14 @@ INSERT INTO `text_translation` (`id`, `title`, `context`, `lang`) VALUES
 	(84, 'Trzecia sekcja', '<p><b>Przyczyny&nbsp;niepłodności&nbsp;kobiet:</b></p>\r\n<ul>\r\n<li>Zmiany anatomiczne dr&oacute;g rodnych (wrodzone i nabyte)</li>\r\n<li>Zaburzenia jajeczkowania (najczęściej zesp&oacute;ł PCO)</li>\r\n<li>Zaburzenia hormonalne (hiperprolaktynemia, zaburzenia fazy lutealnej, choroby tarczycy, nadnerczy)</li>\r\n<li>Zaburzenia immunologiczne (autoi i alloimmunologiczne)</li>\r\n<li>Endometrioza (czynnik anatomiczny, zaburzenia jajeczkowania i czynnik immunologiczny)</li>\r\n</ul>', 'pl'),
 	(85, 'FAQ', '<p>FAQ</p>', 'pl'),
 	(86, 'Druga sekcja', '<p>W trakcie studi&oacute;w pod inspiracją swoich nauczycieli (p<b>rof. H. H&uuml;bner &ndash; </b>biolog i genetyk, <b>prof. H. Bartel</b> &ndash; embriolog<b>, prof. S. Orkisz</b> &ndash; histolog, wsp&oacute;łodkrywca translacji DNA-RNA nagrodzonej <b>nagrodą Nobla</b>,&nbsp; <b>dr. D. Tosik</b> &ndash; embriolog, histolog, <b>prof. H. Tch&oacute;rzewski</b> &ndash; patofizjolog i immunolog, <b>prof. K. Zeman</b> &ndash; immunolog, <b>prof. Z. Baj</b> &ndash; patofizjolog, <b>prof. K. Zieliński</b> &ndash; patomorfolog, <b>prof. A. Malinowski</b> &ndash; ginekolog, immunolog, <b>dr W. Budźko</b> &ndash; ginekolog, położnik) rozpoczął pracę w Studenckich kołach naukowych. W tym okresie zainteresowania ogniskowały się na indukowanych wadach wrodzonych u myszy (ocena makroskopowa i w mikroskopie świetlnym oraz elektronowym) gł&oacute;wnie rozszczepach podniebienia indukowanych bromodeoksyurydyną, zagadnieniach związanych z generowaniem reaktywnych form tlenu u ludzi, procesami genetycznym prowadzącymi do apoptozy w procesach rozwoju prenatalnego u myszy poddawanych wpływowi teratogen&oacute;w, immunologicznymi przyczynami niepłodności, gł&oacute;wnie obecnością przeciwciał blokujących we krwi kobiet z par niepłodnych, możliwościami terapeutycznymi leczenia niepłodności o podłożu immunologicznym, gł&oacute;wnie szczepieniem limfocytami partnera w reakcji MLR, przyczynami psychologicznymi w niepłodności małżeńskiej (wsp&oacute;łpraca z <b>prof. Bielawską &ndash; Batorowicz</b>), możliwością zastosowaniu <b>OXTDAN-u</b> w terapii ran poporodowych (badania kliniczne III fazy), wpływem nadwagi i otyłości na wybrane parametry ciąży, porodu i połogu i czynnikami środowiskowymi mogącymi prowadzić do uszkodzenia funkcji generatywnej jajnika u myszy &ndash; ocena wybranych parametr&oacute;w morfologicznych&nbsp; jajnik&oacute;w myszy poddawanych działaniu kofeiny; ocena w mikroskopie świetlnym i elektronowym, badania immunoenzymatyczne i metodami genetyki molekularnej. <b>Za swoje prace nagradzany i wyr&oacute;żniany</b> na konferencjach studenckich, zar&oacute;wno og&oacute;lnopolskich jak i międzynarodowych.</p>\r\n<p><b>Specjalizację z położnictwa i ginekologii</b> rozpoczął&nbsp; 2001 r. pod okiem <b>prof. J.R. Wilczyńskiego</b> w Instytucie Centrum Zdrowia Matki Polki w Łodzi. Z powod&oacute;w rodzinnych kontynuował specjalizację w Ginekologiczno &ndash; Położniczym Szpitalu Klinicznym w Poznaniu na ul Polnej 33, r&oacute;wnolegle zdobywając doświadczenie zawodowe w Szpitalu Powiatowym w Wałczu. W trakcie specjalizacji nawiązał wsp&oacute;łpracę naukową z <b>prof. W. Baranowskim</b> z CSK WIM w Warszawie, gdzie r&oacute;wnież szkolił się w technikach endoskopowych w ginekologii i w procedurach diagnostycznych i leczeniu operacyjnym w uroginekologii. Od 2006 r. zainteresowany naturalnymi metodami planowania rodziny, a w 2009 r. zetknął się z <b>naprotechnologią</b> jako alternatywą leczenia niepłodności <b>wobec ART.</b> (techniki rozrodu wspomaganego).&nbsp;&nbsp; W latach 2012 &ndash; 2013 brał udział w kursie dla konsultant&oacute;w medycznych metod naturalnego planowania rodziny i szkoleniu z systemu obserwacji cyklu płciowemu kobiety <b>modelem Creighton</b> (the Creighton Model Fertility Care System, CrMS) oraz szkoleniu z <b>NaPro TECHNOLOGY <sup>&trade;</sup></b>. Prowadził wykłady na temat działania antykoncepcji dla słuchaczy Studium Rodziny przy Wydziale Teologicznym Uniwersytetu im Adama Mickiewicza w Poznaniu i dla student&oacute;w Warszawskiego Uniwersytetu Medycznego w ramach konferencji &bdquo;Ginekologia in vivo&rdquo; a także dla lekarzy podczas IX Gdańskich spotkań z etyką lekarską i spotkaniach ginekolog&oacute;w katolickich i środowisk NaPro. W swoich opracowaniach ogniskował się na wpływie antykoncepcji na parametry zdrowotne i epidemiologiczne. Zainteresowany czynnikiem męskim w niepłodności małżeńskiej.</p>\r\n<p>Członek zwykły <b>Polskiego Towarzystwa Andrologicznego</b>, <b>Polskiego Towarzystwa Ginekologicznego</b>, <b>Polskiego Towarzystwa Endokrynologii Ginekologicznej</b>.</p>', 'pl'),
-	(88, 'Słownik', '<p>Słownik</p>', 'pl');
+	(88, 'Słownik', '<p>Słownik</p>', 'pl'),
+	(89, 'Dane kontaktowe', '<h2>Lek. Piotr Broda</h2>', 'pl'),
+	(90, 'Pierwszy gabinet', '<h2>Gabinet przyjęć</h2>\r\n<p>alvamed<br />ul. Podg&oacute;rna 9<br />61-828 Poznań</p>\r\n<p>podw&oacute;rze dawnego Szpitala im. J. Strusia, wejście "I"</p>\r\n<p>Adresy, rejestracja</p>\r\n<p><a href="http://www.naprotechnologia-poznan.pl/">http://www.naprotechnologia-poznan.pl/</a><a href="http://alvamed.pl/index.php/naprotechnologia"><br />http://alvamed.pl/index.php/naprotechnologia</a></p>', 'pl'),
+	(91, 'Drugi gabinet', '<h2>Gabinet przyjęć</h2>\r\n<p>Gabinet ginekologiczny w Ośrodku Wsparcia Płodności &bdquo;NaProTechnologia&rdquo;<br />ul. Klasztorna 4<br />62-563 Licheń Stary</p>\r\n<p>Godziny przyjęć, rejestracja, cennik, dojazd:</p>\r\n<p><a href="http://www.lichen.pl/pl/472/godziny_przyjec">http://www.lichen.pl/pl/472/godziny_przyjec</a></p>\r\n<p>&nbsp;</p>', 'pl'),
+	(92, 'Hormony', '<p>Wiele laboratori&oacute;w stosuje nie tylko inne metody analityczne podczas praparatyki materiału, ale r&oacute;wnież przedstawia wynik w innych jednostkach miary. Nieuwzględnienie tego faktu może skutkować błędami diagnostycznymi i w konsekwencji niewłaściwą terapią.</p>\r\n<p>Tutaj możesz zweryfikować swoje wyniki w r&oacute;żnych jednostkach.</p>', 'pl'),
+	(93, 'Indeksy hormonalne', '<p>Wsp&oacute;łczesna medycyna w diagnostyce stosuje r&oacute;żne skale i wsp&oacute;łczynniki.</p>\r\n<p>HOMA, insulinooporność, testosteron biodostępny i in.</p>\r\n<p>Twoje badanie jest wyrażone w innych jednostkach?</p>\r\n<p>Tutaj wszystko przeliczysz i uzyskasz wynik jaki możesz przekazać Pacjentowi.</p>', 'pl'),
+	(94, 'Antropometria', '<p>BMI, WHR, powierzchnia ciała, klirens kreatyniny, grupa krwi dziecka a grupa krwi rodzic&oacute;w, kalkulator ciążowy dla ludzi i zwierząt.</p>\r\n<p>Podstaw dane a otrzymasz wynik!</p>', 'pl'),
+	(95, 'Do pobrania', '<p>Do pobrania</p>', 'pl');
 /*!40000 ALTER TABLE `text_translation` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
