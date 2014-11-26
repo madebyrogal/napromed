@@ -8,6 +8,7 @@ $(document).ready(function () {
     listenAnchorUrl();
     //contactSend();
     hormons();
+    initMask();
 });
 
 $(window).load(function () {
@@ -33,20 +34,205 @@ $(window).load(function () {
     }
 });
 
+//Maska na inputy
+function initMask(){
+    $('.inputVal').keyup(function(){
+       var val = $(this).val();
+       val = val.replace(/,/, ".");
+       val = val.replace(/[a-zA-Z]/, '');
+       $(this).val(val);
+    });
+}
+
 //Działanie hormonów
-function hormons(){
-    $('#hormon').click(function(){
-       var hormonId = $(this).val();
-       $('.hormons').hide();
-       $('#'+hormonId).show();
+function hormons() {
+    //ESTRADIOL
+    var estArray = ['pmol', 'pg'];
+    estArray['pmol'] = [];
+    estArray['pmol']['pmol'] = 1;
+    estArray['pmol']['pg'] = 0.2724;
+    estArray['pg'] = [];
+    estArray['pg']['pmol'] = 3.671;
+    estArray['pg']['pg'] = 1;
+
+    //PROGESTERON
+    var proArray = ['nmol', 'ng'];
+    proArray['nmol'] = [];
+    proArray['nmol']['nmol'] = 1
+    proArray['nmol']['ng'] = 0.3145;
+    proArray['ng'] = [];
+    proArray['ng']['nmol'] = 3.18;
+    proArray['ng']['ng'] = 1;
+    
+    //TESTOSTERON
+    var tesArray = ['nmol', 'ng']
+    tesArray['nmol'] = [];
+    tesArray['nmol']['nmol'] = 1
+    tesArray['nmol']['ng'] = 28.8184;
+    tesArray['ng'] = [];
+    tesArray['ng']['nmol'] = 0.0347;
+    tesArray['ng']['ng'] = 1;
+    
+    //PROLAKTYNA
+    var prlArray = ['ng', 'mi'];
+    prlArray['ng'] = [];
+    prlArray['ng']['ng'] = 1;
+    prlArray['ng']['mi'] = 20;
+    prlArray['mi'] = [];
+    prlArray['mi']['ng'] = 0.05;
+    prlArray['mi']['mi'] = 1;
+    
+    //INSULINA
+    var insArray = ['pm', 'mi'];
+    insArray['pm'] = [];
+    insArray['pm']['pm'] = 1;
+    insArray['pm']['mi'] = 0.144;
+    insArray['mi'] = [];
+    insArray['mi']['pm'] = 6.945;
+    insArray['mi']['mi'] = 1;
+    
+    //GLUKOZA
+    var gluArray = ['mm', 'mg'];
+    gluArray['mm'] = [];
+    gluArray['mm']['mm'] = 1;
+    gluArray['mm']['mg'] = 18.018;
+    gluArray['mg'] = [];
+    gluArray['mg']['mm'] = 0.0555;
+    gluArray['mg']['mg'] = 1;
+    
+    //DHEA
+    var dheArray = ['nm', 'ng'];
+    dheArray['nm'] = [];
+    dheArray['nm']['nm'] = 1;
+    dheArray['nm']['ng'] = 0.2882;
+    dheArray['ng'] = [];
+    dheArray['ng']['nm'] = 3.47;
+    dheArray['ng']['ng'] = 1;
+    
+    //ANDROSTENDION
+    var andArray = ['nm', 'ng'];
+    andArray['nm'] = [];
+    andArray['nm']['nm'] = 1;
+    andArray['nm']['ng'] = 28.985;
+    andArray['ng'] = [];
+    andArray['ng']['nm'] = 0.0345;
+    andArray['ng']['ng'] = 1;
+    
+    //17–α-OH-PROGESTERON
+    var a17Array = ['nm', 'ng'];
+    a17Array['nm'] = [];
+    a17Array['nm']['nm'] = 1;
+    a17Array['nm']['ng'] = 0.33;
+    a17Array['ng'] = [];
+    a17Array['ng']['nm'] = 3.03;
+    a17Array['ng']['ng'] = 1;
+    
+    //ESTRON
+    var esrArray = ['pm', 'ng'];
+    esrArray['pm'] = [];
+    esrArray['pm']['pm'] = 1;
+    esrArray['pm']['ng'] = 0.027;
+    esrArray['ng'] = [];
+    esrArray['ng']['pm'] = 37;
+    esrArray['ng']['ng'] = 1;
+    
+    $('#hormon').click(function () {
+        var hormonId = $(this).val();
+        $('.hormons').hide();
+        $('.hormons input').val('');
+        $('#' + hormonId).show();
     });
     //ESTRADIOL
-    $('#estVal').keyup(function(){
-        var unitArray = {};
-        unitArray['pn']
-        var val = $(this).val();
-        
+    $('#estVal').keyup(function () {
+        calculateHormon('est', estArray);
     });
+    $('#estUnit, #estUnit2').change(function () {
+        calculateHormon('est', estArray);
+    });
+    
+    //PROGESTERON
+    $('#proVal').keyup(function () {
+        calculateHormon('pro', proArray);
+    });
+    $('#proUnit, #proUnit2').change(function () {
+        calculateHormon('pro', proArray);
+    });
+    
+    //TESTOSTERON
+    $('#tesVal').keyup(function () {
+        calculateHormon('tes', tesArray);
+    });
+    $('#tesUnit, #tesUnit2').change(function () {
+        calculateHormon('tes', tesArray);
+    });
+    
+    //PROLAKTYNA
+    $('#prlVal').keyup(function () {
+        calculateHormon('prl', prlArray);
+    });
+    $('#prlUnit, #prlUnit2').change(function () {
+        calculateHormon('prl', prlArray);
+    });
+    
+    //INSULINA
+    $('#insVal').keyup(function () {
+        calculateHormon('ins', insArray);
+    });
+    $('#insUnit, #insUnit2').change(function () {
+        calculateHormon('ins', insArray);
+    });
+    
+    //GLUKOZA
+    $('#gluVal').keyup(function () {
+        calculateHormon('glu', gluArray);
+    });
+    $('#gluUnit, #gluUnit2').change(function () {
+        calculateHormon('glu', gluArray);
+    });
+    
+    //DHEA
+    $('#dheVal').keyup(function () {
+        calculateHormon('dhe', dheArray);
+    });
+    $('#dheUnit, #dheUnit2').change(function () {
+        calculateHormon('dhe', dheArray);
+    });
+    
+    //ANDROSTENDION
+    $('#andVal').keyup(function () {
+        calculateHormon('and', andArray);
+    });
+    $('#andUnit, #andUnit2').change(function () {
+        calculateHormon('and', andArray);
+    });
+    
+    //17–α-OH-PROGESTERON
+    $('#a17Val').keyup(function () {
+        calculateHormon('a17', a17Array);
+    });
+    $('#a17Unit, #a17Unit2').change(function () {
+        calculateHormon('a17', a17Array);
+    });
+    
+    //ESTRON
+    $('#esrVal').keyup(function () {
+        calculateHormon('esr', esrArray);
+    });
+    $('#esrUnit, #esrUnit2').change(function () {
+        calculateHormon('esr', esrArray);
+    });
+}
+
+//Funkcja obliczająca działanie hormonów
+function calculateHormon(hormon, unitArray) {
+    var val = $('#' + hormon + 'Val').val();
+    var unit = $('#' + hormon + 'Unit').val();
+    var unit2 = $('#' + hormon + 'Unit2').val();
+    var val2 = val * unitArray[unit][unit2];
+    val2 = val2.toFixed(2);
+    if(val2 !== 'NaN'){
+        $('#' + hormon + 'Val2').val(val2);
+    }
 }
 
 function contactSend() {
@@ -241,7 +427,7 @@ function listenAnchorUrl() {
         var hash = window.location.hash.substring(1);
         $('.faq li div').slideUp();
         $('.faq ul li').removeClass('active');
-        $('#'+hash).parent().addClass('active');
-        $('#'+hash).next('div').slideDown();
+        $('#' + hash).parent().addClass('active');
+        $('#' + hash).next('div').slideDown();
     }
 }

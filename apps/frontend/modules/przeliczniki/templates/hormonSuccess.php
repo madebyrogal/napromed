@@ -8,8 +8,8 @@
     <label>Hormony</label>
     <div>
         <select id="hormon" class="hormonName">
-            <option value="0">WYBIERZ HORMON ...</option>
-            <option value="17a">17–α-OH-PROGESTERON</option>
+            <option value="0" selected="selected">WYBIERZ HORMON ...</option>
+            <option value="a17">17–α-OH-PROGESTERON</option>
             <option value="and">ANDROSTENDION</option>
             <option value="dhe">DHEA</option>
             <option value="est">ESTRADIOL</option>
@@ -29,7 +29,7 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="estVal" type="text" value=""/>
+                <input id="estVal" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">
@@ -66,7 +66,7 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="proVal" type="text" value=""/>
+                <input id="proVal" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">
@@ -103,7 +103,7 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="tesVal" type="text" value=""/>
+                <input id="tesVal" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">
@@ -140,7 +140,7 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="prlVal" type="text" value=""/>
+                <input id="prlVal" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">
@@ -177,7 +177,7 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="insVal" type="text" value=""/>
+                <input id="insVal" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">
@@ -214,7 +214,7 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="gluVal" type="text" value=""/>
+                <input id="gluVal" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">
@@ -251,7 +251,7 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="dheVal" type="text" value=""/>
+                <input id="dheVal" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">
@@ -288,7 +288,7 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="andVal" type="text" value=""/>
+                <input id="andVal" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">
@@ -320,18 +320,18 @@
     </div>
 </section>
 <!-- 17–α-OH-PROGESTERON -->
-<section id="17a" class="hide hormons">
+<section id="a17" class="hide hormons">
     <div class="row clear">
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="17aVal" type="text" value=""/>
+                <input id="a17Val" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">
             <label>Jednostka</label>
             <div>
-                <select id="17aUnit">
+                <select id="a17Unit">
                     <option value="nm">nmol/L</option>
                     <option value="ng">µg/L (ng/mL)</option>
                 </select>
@@ -342,13 +342,13 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="17aVal2" type="text" value="" disabled="disabled"/>
+                <input id="a17Val2" type="text" value="" disabled="disabled"/>
             </div>
         </div>
         <div class="left">
             <label>Jednostka</label>
             <div>
-                <select id="17aUnit2">
+                <select id="a17Unit2">
                     <option value="ng">µg/L (ng/mL)</option>
                     <option value="nm">nmol/L</option>
                 </select>
@@ -362,7 +362,7 @@
         <div class="left">
             <label>Wartość</label>
             <div>
-                <input id="esrVal" type="text" value=""/>
+                <input id="esrVal" class="inputVal" type="text" value=""/>
             </div>
         </div>
         <div class="left">

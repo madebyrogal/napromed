@@ -15,7 +15,7 @@ default:
 
   stylesheets:    [main.css, style.css]
 
-  javascripts:    [jquery.js, main.js, cookie/jquery.cookie.js, jquery.onepage-scroll.min.js]
+  javascripts:    [jquery.js, main.js, cookie/jquery.cookie.js, jquery.onepage-scroll.min.js, mask/jquery.mask.min.js]
 
   has_layout:     true
   layout:         layout
