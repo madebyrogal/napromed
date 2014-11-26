@@ -31,6 +31,7 @@ class commonActions extends sfActions {
             readfile( sfConfig::get('sf_web_dir') . $file);
             exit;
         }
+        exit;
     }
 
 }
