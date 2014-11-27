@@ -42,11 +42,6 @@ nieplodnosc:
   url:      /nieplodnosc.html  
   param:    { module: nieplodnosc, action: index }
 
-# Przeliczniki
-conversions:
-  url:      /przeliczniki.html  
-  param:    { module: conversions, action: index }
-
 #FAQ
 faq:
   url:      /naprotechnologia-faq.html
