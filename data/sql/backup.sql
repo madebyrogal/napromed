@@ -6,12 +6,11 @@
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Zrzut struktury tabela napromed_dev.article
-DROP TABLE IF EXISTS `article`;
 CREATE TABLE IF NOT EXISTS `article` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `date_from` date NOT NULL,
@@ -36,7 +35,6 @@ INSERT INTO `article` (`id`, `date_from`, `article_category_id`, `author`, `hidd
 
 
 -- Zrzut struktury tabela napromed_dev.article_category
-DROP TABLE IF EXISTS `article_category`;
 CREATE TABLE IF NOT EXISTS `article_category` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `hidden` tinyint(1) DEFAULT '0',
@@ -54,7 +52,6 @@ INSERT INTO `article_category` (`id`, `hidden`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.article_category_translation
-DROP TABLE IF EXISTS `article_category_translation`;
 CREATE TABLE IF NOT EXISTS `article_category_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `name` varchar(255) COLLATE utf8_polish_ci NOT NULL,
@@ -76,7 +73,6 @@ INSERT INTO `article_category_translation` (`id`, `name`, `lang`, `slug`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.article_translation
-DROP TABLE IF EXISTS `article_translation`;
 CREATE TABLE IF NOT EXISTS `article_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` varchar(255) COLLATE utf8_polish_ci NOT NULL,
@@ -100,7 +96,6 @@ INSERT INTO `article_translation` (`id`, `title`, `sneak_peak`, `body`, `lang`, 
 
 
 -- Zrzut struktury tabela napromed_dev.attachment
-DROP TABLE IF EXISTS `attachment`;
 CREATE TABLE IF NOT EXISTS `attachment` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `module` varchar(64) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -116,7 +111,6 @@ CREATE TABLE IF NOT EXISTS `attachment` (
 
 
 -- Zrzut struktury tabela napromed_dev.attachment_translation
-DROP TABLE IF EXISTS `attachment_translation`;
 CREATE TABLE IF NOT EXISTS `attachment_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` varchar(128) COLLATE utf8_polish_ci NOT NULL,
@@ -131,7 +125,6 @@ CREATE TABLE IF NOT EXISTS `attachment_translation` (
 
 
 -- Zrzut struktury tabela napromed_dev.attribute_def
-DROP TABLE IF EXISTS `attribute_def`;
 CREATE TABLE IF NOT EXISTS `attribute_def` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `module` varchar(64) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -148,7 +141,6 @@ CREATE TABLE IF NOT EXISTS `attribute_def` (
 
 
 -- Zrzut struktury tabela napromed_dev.attribute_def_translation
-DROP TABLE IF EXISTS `attribute_def_translation`;
 CREATE TABLE IF NOT EXISTS `attribute_def_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `name` varchar(128) COLLATE utf8_polish_ci NOT NULL,
@@ -164,7 +156,6 @@ CREATE TABLE IF NOT EXISTS `attribute_def_translation` (
 
 
 -- Zrzut struktury tabela napromed_dev.attribute_def_value
-DROP TABLE IF EXISTS `attribute_def_value`;
 CREATE TABLE IF NOT EXISTS `attribute_def_value` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `attribute_def_id` bigint(20) NOT NULL,
@@ -179,7 +170,6 @@ CREATE TABLE IF NOT EXISTS `attribute_def_value` (
 
 
 -- Zrzut struktury tabela napromed_dev.attribute_def_value_translation
-DROP TABLE IF EXISTS `attribute_def_value_translation`;
 CREATE TABLE IF NOT EXISTS `attribute_def_value_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `value` text COLLATE utf8_polish_ci NOT NULL,
@@ -194,7 +184,6 @@ CREATE TABLE IF NOT EXISTS `attribute_def_value_translation` (
 
 
 -- Zrzut struktury tabela napromed_dev.attribute_type
-DROP TABLE IF EXISTS `attribute_type`;
 CREATE TABLE IF NOT EXISTS `attribute_type` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) COLLATE utf8_polish_ci NOT NULL,
@@ -211,7 +200,6 @@ INSERT INTO `attribute_type` (`id`, `name`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.attribute_value
-DROP TABLE IF EXISTS `attribute_value`;
 CREATE TABLE IF NOT EXISTS `attribute_value` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `attribute_def_id` bigint(20) NOT NULL,
@@ -235,7 +223,6 @@ CREATE TABLE IF NOT EXISTS `attribute_value` (
 
 
 -- Zrzut struktury tabela napromed_dev.attribute_value_translation
-DROP TABLE IF EXISTS `attribute_value_translation`;
 CREATE TABLE IF NOT EXISTS `attribute_value_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `value` text COLLATE utf8_polish_ci,
@@ -250,7 +237,6 @@ CREATE TABLE IF NOT EXISTS `attribute_value_translation` (
 
 
 -- Zrzut struktury tabela napromed_dev.carousel_home
-DROP TABLE IF EXISTS `carousel_home`;
 CREATE TABLE IF NOT EXISTS `carousel_home` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -268,7 +254,6 @@ INSERT INTO `carousel_home` (`id`, `name`, `number_of_slides`, `type`, `hidden`)
 
 
 -- Zrzut struktury tabela napromed_dev.contact_form_1
-DROP TABLE IF EXISTS `contact_form_1`;
 CREATE TABLE IF NOT EXISTS `contact_form_1` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -295,7 +280,6 @@ INSERT INTO `contact_form_1` (`id`, `name`, `subject`, `firm`, `phone`, `email`,
 
 
 -- Zrzut struktury tabela napromed_dev.contact_form_2
-DROP TABLE IF EXISTS `contact_form_2`;
 CREATE TABLE IF NOT EXISTS `contact_form_2` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -315,7 +299,6 @@ CREATE TABLE IF NOT EXISTS `contact_form_2` (
 
 
 -- Zrzut struktury tabela napromed_dev.contact_form_3
-DROP TABLE IF EXISTS `contact_form_3`;
 CREATE TABLE IF NOT EXISTS `contact_form_3` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -334,7 +317,6 @@ CREATE TABLE IF NOT EXISTS `contact_form_3` (
 
 
 -- Zrzut struktury tabela napromed_dev.dictionary
-DROP TABLE IF EXISTS `dictionary`;
 CREATE TABLE IF NOT EXISTS `dictionary` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `hidden` tinyint(1) DEFAULT '0',
@@ -364,7 +346,6 @@ INSERT INTO `dictionary` (`id`, `hidden`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.dictionary_translation
-DROP TABLE IF EXISTS `dictionary_translation`;
 CREATE TABLE IF NOT EXISTS `dictionary_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` varchar(255) COLLATE utf8_polish_ci NOT NULL,
@@ -376,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `dictionary_translation` (
   CONSTRAINT `dictionary_translation_id_dictionary_id` FOREIGN KEY (`id`) REFERENCES `dictionary` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.dictionary_translation: ~16 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.dictionary_translation: ~18 rows (około)
 /*!40000 ALTER TABLE `dictionary_translation` DISABLE KEYS */;
 INSERT INTO `dictionary_translation` (`id`, `title`, `body`, `lang`, `slug`) VALUES
 	(1, 'PCO', '<p>Zesp&oacute;ł policystycznych jajnik&oacute;w (PCO) jest bardzo często powiązany z&nbsp;niepłodnością. Wynika to stąd, że jajniki nie funkcjonują prawidłowo, a owulacja pojawia się nieregularnie. Dlatego kobiety cierpiące na zesp&oacute;ł policystycznych jajnik&oacute;w mają zazwyczaj długie i&nbsp;nieregularne cykle menstruacyjne.</p>\r\n<p>Wiele lat temu syndrom ten identyfikowano jako zesp&oacute;l Steina-Leventhala. Był on związany z&nbsp;brakiem miesiączki, otyłością, nadmiernym owłosieniem ciała, nadciśnieniem i&nbsp;niepłodnością a jajniki podczas przeprowadzanych operacji opisywano jako porcelanowe z licznymi drobnymi torbielkami na obwodzie. Wsp&oacute;łczesna nauka, dzięki badaniom hormonalnym, ultrasonograficznym i&nbsp;laparoskopowym pokazała, że większość kobiet cierpiąca z&nbsp;powodu zespołu policystycznych jajnik&oacute;w wcale nie jest otyła, nie ma nadciśnienia i&nbsp;występuje u&nbsp;nich miesiączka (choć mają długie i&nbsp;nieregularne cykle). Kobiety te mają natomiast bardzo często problem z&nbsp;płodnością.</p>\r\n<p>Obecnie uznaje się, że u samego podłoża tej endokrynopatii leży szereg czynnik&oacute;w wzajemnie na siebie wpływających i wywołujących patologiczne reakcje w mechanizmie tzw. błędnego koła. Początek kaskady tych niekorzystnych zdarzeń upatruje się w:</p>\r\n<ul>\r\n<li>Czynnikach genetycznych (mutacje w genie P450c-17 i 11 HSD-1)</li>\r\n<li>Wewnątrzmacicznej ekspozycji płodu dziewczęcego na wysokie poziomy androgen&oacute;w u matki</li>\r\n<li>Siedzący tryb życia</li>\r\n<li>Otyłość</li>\r\n</ul>\r\n<p><b>Diagnostyka zespołu policystycznych jajnik&oacute;w (PCO)</b></p>\r\n<p>Śledzenie cyklu menstruacyjnego jest bardzo ważne dla oceny zdrowia pacjentki, a następnie dla zastosowania odpowiedniego leczenia. Wymagane jest wykonanie pełnego profilu hormonalnego, badań USG, oceny owulacji. Powinien on zawierać badania hormon&oacute;w takich jak: FSH, LH, androstendionu, testosteronu, wolnego testosteronu, DHEA, prolaktyny, beta-endorfin, TSH, FT3, FT4, progesteronu i&nbsp;estradiolu. Należy jednak przede wszystkim zlecić wykonanie doustnego testu obciążenia glukozą z ocena poziomu insuliny w spoczynku i po teście z glukozą.</p>\r\n<p>Po wykonaniu tych badań możliwe jest wyeliminowanie niekt&oacute;rych przyczyn nieregularnych cykli i&nbsp;definitywnie zdiagnozowanie zespołu PCO. Dodatkowo wykonywane jest badanie ultrasonograficzne miednicy mniejszej. Jajniki kobiety z&nbsp;PCO często są o&nbsp;wiele większe i&nbsp;wielotorbielowate. W&nbsp;pewnych przypadkach przeprowadzana jest r&oacute;wnież diagnostyka laparoskopowa.</p>\r\n<p><b>Leczenie zespołu policystycznych jajnik&oacute;w (PCO)</b></p>\r\n<p>Jednym z&nbsp;pierwszych zadań w&nbsp;leczeniu zespołu policystycznych jajnik&oacute;w jest zmniejszenie produkcji męskich hormon&oacute;w poprzez redukcję hiperinsulinemii i insulinooporności.</p>\r\n<p>Uzyskuje się to farmakologicznie lub przez klinową resekcję jajnik&oacute;w. Leczeniu zawsze musi towarzyszyć zmiana stylu życia i zwiększony wydatek energetyczny. Leczenie operacyjne daje trwałe rezultaty w postaci przywr&oacute;cenia płodności i zniesieniu zaburzeń metabolicznych. Leczenie płodności można osiągnąć także przez stymulację owulacji np. Clostilbegytem. Wspomniana wyżej klinowa resekcja jajnik&oacute;w jest procedurą chirurgiczną polegającą na klinowym usunięciu części tkanki jajnika, przez co ulega on zmniejszeniu i&nbsp;poprawia się jego funkcjonowanie. Choć jest to operacja znana od dawna, obecnie powraca do łask, gdyż znacząco poprawiła się w&nbsp;medycynie zdolność do zapobiegania powstawaniu zrost&oacute;w. Dodatkowo, zabieg jest wyjątkowo skuteczny jeśli chodzi o&nbsp;obniżenie poziomu męskich hormon&oacute;w i&nbsp;regulację cyklu menstruacyjnego, co jednocześnie poprawia płodność i&nbsp;obniża ryzyko wystąpienia raka piersi i&nbsp;raka macicy.</p>\r\n<p>Wyniki leczenia niepłodności metodą NaProTECHNOLOGY opublikowane zostały w 2004 roku przez prof. Thomasa Hilgersa w <i><b>The Medical and Surgical Practice of NaProTECHNOLOGY</b></i> oraz w 2008 roku w publikacji Josepha B. Stanforda, MD,MSPH, Tracey A.Parnella, MD and Phila C. Boyle, MB w czasopiśmie medycznym <b>"Journal of the American Board of Family Medicine: Outcomes From Treatment of Infertility With Natural Procreative Technology in an Irish General Practice"</b>.</p>\r\n<p>Skumulowany wskaźnik ciąż dla pacjentek z zespołem policystycznych jajnik&oacute;w:</p>\r\n<ol>\r\n<li>40% po 12 miesiącach</li>\r\n<li>65% po 24 miesiącach</li>\r\n<li>do 90% po 48 miesiącach</li>\r\n</ol>\r\n<p><b>NaProTECHNOLOGY</b> okazuje się 2,67 razy bardziej skuteczna niż in vitro dla endometriozy, 2,36 razy dla PCOS i 1,41 razy dla niedrożności jajowod&oacute;w. W badaniu z Irlandii, w latach 1998-2002 zgłosiło się 1239 par małżeńskich z powodu niepłodności. Średni wiek kobiet to 35,8 lat, średnia długość trwania niepłodności 5,6 roku. 33% par wcześniej było leczonych ART. Wskaźnik ciąż <b>NaProTECHNOLOGY</b> wyni&oacute;sł 52%. Udało się pom&oacute;c około 30% par po niepowodzeniach ART, czyli technik wspomaganego rozrodu &bdquo;in vitro&rdquo;(J Am Board Fam Med 2008;21:375&ndash;384.).</p>\r\n<p>Szczeg&oacute;łowe badania nad skutecznością metody w przypadkach problem&oacute;w z płodnością dostępne są na stronie: <a href="http://naprotechnology.com/infertility.htm" target="_blank">http://naprotechnology.com/infertility.htm</a></p>', 'pl', 'pco'),
@@ -399,7 +380,6 @@ INSERT INTO `dictionary_translation` (`id`, `title`, `body`, `lang`, `slug`) VAL
 
 
 -- Zrzut struktury tabela napromed_dev.download
-DROP TABLE IF EXISTS `download`;
 CREATE TABLE IF NOT EXISTS `download` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `file` text COLLATE utf8_polish_ci,
@@ -417,7 +397,6 @@ INSERT INTO `download` (`id`, `file`, `hidden`, `created_at`, `updated_at`) VALU
 
 
 -- Zrzut struktury tabela napromed_dev.download_translation
-DROP TABLE IF EXISTS `download_translation`;
 CREATE TABLE IF NOT EXISTS `download_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` varchar(255) COLLATE utf8_polish_ci NOT NULL,
@@ -436,7 +415,6 @@ INSERT INTO `download_translation` (`id`, `title`, `lang`, `slug`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.faq
-DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `hidden` tinyint(1) DEFAULT '0',
@@ -460,7 +438,6 @@ INSERT INTO `faq` (`id`, `hidden`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.faq_translation
-DROP TABLE IF EXISTS `faq_translation`;
 CREATE TABLE IF NOT EXISTS `faq_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` varchar(255) COLLATE utf8_polish_ci NOT NULL,
@@ -472,7 +449,7 @@ CREATE TABLE IF NOT EXISTS `faq_translation` (
   CONSTRAINT `faq_translation_id_faq_id` FOREIGN KEY (`id`) REFERENCES `faq` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.faq_translation: ~13 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.faq_translation: ~9 rows (około)
 /*!40000 ALTER TABLE `faq_translation` DISABLE KEYS */;
 INSERT INTO `faq_translation` (`id`, `title`, `body`, `lang`, `slug`) VALUES
 	(1, 'Co to jest Płodność?', '<p>Płodność to zdolność do przekazania (powołania) życia w łączności z osobą płci przeciwnej.</p>\r\n<p>Prawdopodobieństwo koncepcji u człowieka wynosi średnio 25 - 30% w jednym cyklu, natomiast zmniejszony potencjał rozrodczy obydwojga rodzic&oacute;w zmniejsza miesięczne prawdopodobieństwo koncepcji nawet do wartości setnych procenta. Dla jednej pary może ono wynosić 50%&nbsp; a dla innej 5%. Z tego wynika, że przy prawdopodobieństwie miesięcznym 50% potrzeba dw&oacute;ch miesięcy do poczęcia dziecka, podczas gdy para z 5% prawdopodobieństwem będzie potrzebowała 20 miesięcy, by doszło do koncepcji. Płodność zawsze dotyczy pary małżonk&oacute;w i jest wypadkową składowych płodności męża i żony.</p>\r\n<p>Szacuje się, że w populacji og&oacute;lnej (zawierającej r&oacute;wnież niepłodne pary) 84% kobiet zajdzie w ciążę po 12 m-cach regularnego wsp&oacute;łżycia, po dw&oacute;ch latach 92% a po trzech 93%, bez stosowania ingerencji terapeutycznych.</p>\r\n<p>Płodność kobiet obniża się z wiekiem, lecz całkowicie i bezpowrotnie zanika, gdy kobieta wejdzie w okres menopauzy. U mężczyzn natomiast obniża się, lecz nie znika nigdy całkowicie z powodu wieku.</p>\r\n<p>Około 12% mężczyzn diagnozowanych z powodu bezdzietności wykazuje pełną niepłodność właściwie bez szans na ustalenie przyczyn i dobranie odpowiedniej terapii, większość ( ok. 75% ) stanowią mężczyźni z obniżonym potencjałem płodności.</p>', 'pl', 'co-to-jest-plodnosc'),
@@ -489,7 +466,6 @@ INSERT INTO `faq_translation` (`id`, `title`, `body`, `lang`, `slug`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.gallery_1
-DROP TABLE IF EXISTS `gallery_1`;
 CREATE TABLE IF NOT EXISTS `gallery_1` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -503,7 +479,6 @@ CREATE TABLE IF NOT EXISTS `gallery_1` (
 
 
 -- Zrzut struktury tabela napromed_dev.lang
-DROP TABLE IF EXISTS `lang`;
 CREATE TABLE IF NOT EXISTS `lang` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) COLLATE utf8_polish_ci NOT NULL,
@@ -526,7 +501,6 @@ INSERT INTO `lang` (`id`, `name`, `flag`, `slug`, `hidden`, `position`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.mail_data
-DROP TABLE IF EXISTS `mail_data`;
 CREATE TABLE IF NOT EXISTS `mail_data` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `type` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -544,7 +518,6 @@ INSERT INTO `mail_data` (`id`, `type`, `email_from`, `name_from`, `phone`) VALUE
 
 
 -- Zrzut struktury tabela napromed_dev.mail_data_translation
-DROP TABLE IF EXISTS `mail_data_translation`;
 CREATE TABLE IF NOT EXISTS `mail_data_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `subject` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -562,7 +535,6 @@ INSERT INTO `mail_data_translation` (`id`, `subject`, `body`, `lang`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.media
-DROP TABLE IF EXISTS `media`;
 CREATE TABLE IF NOT EXISTS `media` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `module` varchar(64) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -589,7 +561,6 @@ INSERT INTO `media` (`id`, `module`, `parent_id`, `main`, `file`, `file_min1`, `
 
 
 -- Zrzut struktury tabela napromed_dev.media_size
-DROP TABLE IF EXISTS `media_size`;
 CREATE TABLE IF NOT EXISTS `media_size` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `module_cms_id` bigint(20) NOT NULL,
@@ -613,7 +584,6 @@ INSERT INTO `media_size` (`id`, `module_cms_id`, `min1`, `min2`, `min3`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.media_translation
-DROP TABLE IF EXISTS `media_translation`;
 CREATE TABLE IF NOT EXISTS `media_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` varchar(128) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -637,7 +607,6 @@ INSERT INTO `media_translation` (`id`, `title`, `alternative`, `link`, `lang`) V
 
 
 -- Zrzut struktury tabela napromed_dev.meta_tag
-DROP TABLE IF EXISTS `meta_tag`;
 CREATE TABLE IF NOT EXISTS `meta_tag` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `module` varchar(64) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -651,7 +620,6 @@ CREATE TABLE IF NOT EXISTS `meta_tag` (
 
 
 -- Zrzut struktury tabela napromed_dev.meta_tag_translation
-DROP TABLE IF EXISTS `meta_tag_translation`;
 CREATE TABLE IF NOT EXISTS `meta_tag_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` text COLLATE utf8_polish_ci NOT NULL,
@@ -668,7 +636,6 @@ CREATE TABLE IF NOT EXISTS `meta_tag_translation` (
 
 
 -- Zrzut struktury tabela napromed_dev.module_cms
-DROP TABLE IF EXISTS `module_cms`;
 CREATE TABLE IF NOT EXISTS `module_cms` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) COLLATE utf8_polish_ci NOT NULL,
@@ -710,7 +677,6 @@ INSERT INTO `module_cms` (`id`, `name`, `route_name`, `module_group_id`, `hidden
 
 
 -- Zrzut struktury tabela napromed_dev.module_group
-DROP TABLE IF EXISTS `module_group`;
 CREATE TABLE IF NOT EXISTS `module_group` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) COLLATE utf8_polish_ci NOT NULL,
@@ -734,7 +700,6 @@ INSERT INTO `module_group` (`id`, `name`, `hidden`, `position`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.module_group_permission
-DROP TABLE IF EXISTS `module_group_permission`;
 CREATE TABLE IF NOT EXISTS `module_group_permission` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `module_group_id` bigint(20) NOT NULL,
@@ -765,7 +730,6 @@ INSERT INTO `module_group_permission` (`id`, `module_group_id`, `permission_id`)
 
 
 -- Zrzut struktury tabela napromed_dev.module_permission
-DROP TABLE IF EXISTS `module_permission`;
 CREATE TABLE IF NOT EXISTS `module_permission` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `module_id` bigint(20) NOT NULL,
@@ -820,7 +784,6 @@ INSERT INTO `module_permission` (`id`, `module_id`, `permission_id`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.news
-DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `date_from` date NOT NULL,
@@ -836,7 +799,6 @@ CREATE TABLE IF NOT EXISTS `news` (
 
 
 -- Zrzut struktury tabela napromed_dev.newsletter_address
-DROP TABLE IF EXISTS `newsletter_address`;
 CREATE TABLE IF NOT EXISTS `newsletter_address` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `email` text COLLATE utf8_polish_ci NOT NULL,
@@ -853,7 +815,6 @@ CREATE TABLE IF NOT EXISTS `newsletter_address` (
 
 
 -- Zrzut struktury tabela napromed_dev.news_translation
-DROP TABLE IF EXISTS `news_translation`;
 CREATE TABLE IF NOT EXISTS `news_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` varchar(255) COLLATE utf8_polish_ci NOT NULL,
@@ -872,7 +833,6 @@ CREATE TABLE IF NOT EXISTS `news_translation` (
 
 
 -- Zrzut struktury tabela napromed_dev.page
-DROP TABLE IF EXISTS `page`;
 CREATE TABLE IF NOT EXISTS `page` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `layout` varchar(64) COLLATE utf8_polish_ci NOT NULL,
@@ -905,7 +865,7 @@ INSERT INTO `page` (`id`, `layout`, `route_name`, `route_hash`, `parent_id`, `hi
 	(15, 'layout', 'nieplodnosc', 'infertility', 1, 0, 0, '', 10),
 	(16, 'layout', 'staticPage', 'infertility_men', 15, 0, 0, '', 12),
 	(17, 'layout', 'staticPage', 'infertility_women', 15, 0, 0, '', 13),
-	(18, 'layout', 'conversions', 'conversions', 1, 0, 0, '', 13),
+	(18, 'layout', 'conversions_hormons', 'conversions', 1, 0, 0, '', 13),
 	(19, 'layout', 'conversions_hormons', 'conversions_hormons', 18, 0, 0, '', 19),
 	(20, 'layout', 'conversions_hormons_complex', 'conversions_hormons_complex', 18, 0, 0, '', 20),
 	(21, 'layout', 'conversions_antropometria', 'conversions_antropometria', 18, 0, 0, '', 21),
@@ -918,7 +878,6 @@ INSERT INTO `page` (`id`, `layout`, `route_name`, `route_hash`, `parent_id`, `hi
 
 
 -- Zrzut struktury tabela napromed_dev.page_translation
-DROP TABLE IF EXISTS `page_translation`;
 CREATE TABLE IF NOT EXISTS `page_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` varchar(128) COLLATE utf8_polish_ci NOT NULL,
@@ -962,7 +921,6 @@ INSERT INTO `page_translation` (`id`, `title`, `subtitle`, `meta_title`, `meta_k
 
 
 -- Zrzut struktury tabela napromed_dev.product
-DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `category_id` bigint(20) NOT NULL,
@@ -981,7 +939,6 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 
 -- Zrzut struktury tabela napromed_dev.product_card
-DROP TABLE IF EXISTS `product_card`;
 CREATE TABLE IF NOT EXISTS `product_card` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `hidden` tinyint(1) DEFAULT '0',
@@ -996,7 +953,6 @@ CREATE TABLE IF NOT EXISTS `product_card` (
 
 
 -- Zrzut struktury tabela napromed_dev.product_card_translation
-DROP TABLE IF EXISTS `product_card_translation`;
 CREATE TABLE IF NOT EXISTS `product_card_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `nazwa` varchar(255) COLLATE utf8_polish_ci NOT NULL,
@@ -1015,7 +971,6 @@ CREATE TABLE IF NOT EXISTS `product_card_translation` (
 
 
 -- Zrzut struktury tabela napromed_dev.product_categories
-DROP TABLE IF EXISTS `product_categories`;
 CREATE TABLE IF NOT EXISTS `product_categories` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `parent_id` bigint(20) DEFAULT NULL,
@@ -1033,7 +988,6 @@ CREATE TABLE IF NOT EXISTS `product_categories` (
 
 
 -- Zrzut struktury tabela napromed_dev.product_categories_translation
-DROP TABLE IF EXISTS `product_categories_translation`;
 CREATE TABLE IF NOT EXISTS `product_categories_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `name` varchar(128) COLLATE utf8_polish_ci NOT NULL,
@@ -1050,7 +1004,6 @@ CREATE TABLE IF NOT EXISTS `product_categories_translation` (
 
 
 -- Zrzut struktury tabela napromed_dev.product_translation
-DROP TABLE IF EXISTS `product_translation`;
 CREATE TABLE IF NOT EXISTS `product_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `name` varchar(255) COLLATE utf8_polish_ci NOT NULL,
@@ -1069,7 +1022,6 @@ CREATE TABLE IF NOT EXISTS `product_translation` (
 
 
 -- Zrzut struktury tabela napromed_dev.sf_guard_forgot_password
-DROP TABLE IF EXISTS `sf_guard_forgot_password`;
 CREATE TABLE IF NOT EXISTS `sf_guard_forgot_password` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) NOT NULL,
@@ -1088,7 +1040,6 @@ CREATE TABLE IF NOT EXISTS `sf_guard_forgot_password` (
 
 
 -- Zrzut struktury tabela napromed_dev.sf_guard_group
-DROP TABLE IF EXISTS `sf_guard_group`;
 CREATE TABLE IF NOT EXISTS `sf_guard_group` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -1109,7 +1060,6 @@ INSERT INTO `sf_guard_group` (`id`, `name`, `description`, `created_at`, `update
 
 
 -- Zrzut struktury tabela napromed_dev.sf_guard_group_permission
-DROP TABLE IF EXISTS `sf_guard_group_permission`;
 CREATE TABLE IF NOT EXISTS `sf_guard_group_permission` (
   `group_id` bigint(20) NOT NULL DEFAULT '0',
   `permission_id` bigint(20) NOT NULL DEFAULT '0',
@@ -1131,7 +1081,6 @@ INSERT INTO `sf_guard_group_permission` (`group_id`, `permission_id`, `created_a
 
 
 -- Zrzut struktury tabela napromed_dev.sf_guard_permission
-DROP TABLE IF EXISTS `sf_guard_permission`;
 CREATE TABLE IF NOT EXISTS `sf_guard_permission` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -1152,7 +1101,6 @@ INSERT INTO `sf_guard_permission` (`id`, `name`, `description`, `created_at`, `u
 
 
 -- Zrzut struktury tabela napromed_dev.sf_guard_remember_key
-DROP TABLE IF EXISTS `sf_guard_remember_key`;
 CREATE TABLE IF NOT EXISTS `sf_guard_remember_key` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) DEFAULT NULL,
@@ -1173,7 +1121,6 @@ INSERT INTO `sf_guard_remember_key` (`id`, `user_id`, `remember_key`, `ip_addres
 
 
 -- Zrzut struktury tabela napromed_dev.sf_guard_user
-DROP TABLE IF EXISTS `sf_guard_user`;
 CREATE TABLE IF NOT EXISTS `sf_guard_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -1197,7 +1144,7 @@ CREATE TABLE IF NOT EXISTS `sf_guard_user` (
 -- Zrzucanie danych dla tabeli napromed_dev.sf_guard_user: ~4 rows (około)
 /*!40000 ALTER TABLE `sf_guard_user` DISABLE KEYS */;
 INSERT INTO `sf_guard_user` (`id`, `first_name`, `last_name`, `email_address`, `username`, `algorithm`, `salt`, `password`, `is_active`, `is_super_admin`, `last_login`, `created_at`, `updated_at`) VALUES
-	(1, 'Tomasz', 'Rogalski', 'rogalski.tomaszek@gmail.com', 'admin', 'sha1', '1d494bdbba5a19a90d24ff50abb520ce', '9adad637317cc4ba87601de12b209d121be58a70', 1, 1, '2014-11-24 20:14:51', '2012-11-14 20:33:26', '2014-11-24 20:14:52'),
+	(1, 'Tomasz', 'Rogalski', 'rogalski.tomaszek@gmail.com', 'admin', 'sha1', '1d494bdbba5a19a90d24ff50abb520ce', '9adad637317cc4ba87601de12b209d121be58a70', 1, 1, '2014-11-27 20:56:11', '2012-11-14 20:33:26', '2014-11-27 20:56:11'),
 	(3, 'Joanna', 'Rogalska', 'rogalska.joasia@gmail.com', 'asia', 'sha1', '4963b9ec301b197d994a5acbd350a844', '93ebd8811fb1b117fd228d42d497a98554e80e5a', 1, 0, '2013-05-06 12:38:36', '2013-02-27 13:34:12', '2013-05-06 12:38:36'),
 	(4, 'Jolanta', 'Dec', 'jolantadecnieruchomosci@gmail.com', 'jola', 'sha1', 'f5d5bf0f8f982cd66a0d7e30e06b0baa', '9d5bba0d287f26d0b4f5b50e2a38d373c83e905f', 1, 0, '2014-04-25 19:59:55', '2014-02-11 23:06:57', '2014-04-25 19:59:55'),
 	(5, 'Artur', 'Dec', 'arturdec@gmail.com', 'artur', 'sha1', 'ff6f8430b8fcb5d46f45d7be58da368d', '847ce2bd1550a8d964ad49ec08321d9f042c9e16', 1, 0, NULL, '2014-02-11 23:09:16', '2014-02-11 23:09:16');
@@ -1205,7 +1152,6 @@ INSERT INTO `sf_guard_user` (`id`, `first_name`, `last_name`, `email_address`, `
 
 
 -- Zrzut struktury tabela napromed_dev.sf_guard_user_group
-DROP TABLE IF EXISTS `sf_guard_user_group`;
 CREATE TABLE IF NOT EXISTS `sf_guard_user_group` (
   `user_id` bigint(20) NOT NULL DEFAULT '0',
   `group_id` bigint(20) NOT NULL DEFAULT '0',
@@ -1228,7 +1174,6 @@ INSERT INTO `sf_guard_user_group` (`user_id`, `group_id`, `created_at`, `updated
 
 
 -- Zrzut struktury tabela napromed_dev.sf_guard_user_permission
-DROP TABLE IF EXISTS `sf_guard_user_permission`;
 CREATE TABLE IF NOT EXISTS `sf_guard_user_permission` (
   `user_id` bigint(20) NOT NULL DEFAULT '0',
   `permission_id` bigint(20) NOT NULL DEFAULT '0',
@@ -1250,7 +1195,6 @@ INSERT INTO `sf_guard_user_permission` (`user_id`, `permission_id`, `created_at`
 
 
 -- Zrzut struktury tabela napromed_dev.text
-DROP TABLE IF EXISTS `text`;
 CREATE TABLE IF NOT EXISTS `text` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `module` varchar(128) COLLATE utf8_polish_ci NOT NULL,
@@ -1307,7 +1251,6 @@ INSERT INTO `text` (`id`, `module`, `parent_id`, `hidden`) VALUES
 
 
 -- Zrzut struktury tabela napromed_dev.text_translation
-DROP TABLE IF EXISTS `text_translation`;
 CREATE TABLE IF NOT EXISTS `text_translation` (
   `id` bigint(20) NOT NULL DEFAULT '0',
   `title` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
@@ -1317,7 +1260,7 @@ CREATE TABLE IF NOT EXISTS `text_translation` (
   CONSTRAINT `text_translation_id_text_id` FOREIGN KEY (`id`) REFERENCES `text` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
--- Zrzucanie danych dla tabeli napromed_dev.text_translation: ~43 rows (około)
+-- Zrzucanie danych dla tabeli napromed_dev.text_translation: ~38 rows (około)
 /*!40000 ALTER TABLE `text_translation` DISABLE KEYS */;
 INSERT INTO `text_translation` (`id`, `title`, `context`, `lang`) VALUES
 	(33, 'Home', '<p>Home</p>', 'pl'),
