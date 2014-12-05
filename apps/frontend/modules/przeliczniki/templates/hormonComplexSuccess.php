@@ -9,13 +9,13 @@
     <div>
         <select id="hormonComplex" class="hormonName">
             <option value="0" selected="selected">WYBIERZ INDEKS ...</option>
-            <option value="ins">INSULINOODPORNOŚĆ</option>
+            <option value="ins">INSULINOOPORNOŚĆ</option>
             <option value="hom">HOMA IR</option>
         </select>
     </div>
 </div>
 <div class="clear"></div>
-<!-- INSULINOODPORNOŚĆ -->
+<!-- INSULINOOPORNOŚĆ -->
 <section id="ins" class="hide hormons">    
     <div class="row clear">
         <div class="left">

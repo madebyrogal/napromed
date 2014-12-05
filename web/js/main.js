@@ -9,6 +9,7 @@ $(document).ready(function () {
     //contactSend();
     hormons();
     hormonsIndex();
+    antropometria();
     initMask();
 });
 
@@ -45,6 +46,259 @@ function initMask() {
     });
 }
 
+//Działanie antropometrii
+function antropometria() {
+    $('#antropometriaCal').click(function () {
+        //validacja
+        if(validAntropometria()){
+            var wzrost = $('#wzrostVal').val();
+            var waga = $('#wagaVal').val();
+            var talia = $('#taliaVal').val();
+            var biodra = $('#biodraVal').val();
+            var plec = $('#plecUnit').val();
+            var wiek = $('#lataUnit').val() * 5;
+            var kreatynina = $('#kreatyninaVal').val();
+            var kreatyninaUnit = $('#kreatyninaUnit').val();
+            //Obliczenia
+            $('#mosteller').html(mosteller(wzrost, waga));
+            $('#bmi').html(bmi(waga, wzrost));
+            $('#taton').html(taton(wzrost, waga, plec));
+            $('#bmc').html(bmc(waga, wzrost, wiek, plec));
+            $('#whr').html(whr(talia, biodra, plec));
+            $('#whtr').html(whtr(talia, wzrost, plec));
+            $('#bmr').html(bmr(waga, wzrost, wiek, plec));
+            if( kreatynina !== '' && kreatynina !== 'NaN'){
+                $('#kre').html(kre(kreatynina, kreatyninaUnit, wiek, waga, plec));
+            }
+            else{
+                $('#kre').html('---');
+            }
+            if(wzrost > 150){
+                $('#lorenz').html(lorenz(wzrost));
+            }
+            else{
+                $('#lorenz').html('---');
+            }
+            $('#antropometriaResult').show();
+        }
+        else{
+            $('#antropometriaResult').hide();
+        }
+    });
+}
+
+//Idealna masa ciała wg Lorenza
+function lorenz(wzrost){
+    var result = (wzrost - 100) - (wzrost - 150)/4
+    result = result.toFixed(2);
+    return result;
+}
+
+//Indeks masy ciała BMI
+function bmi(waga, wzrost){
+    var result = waga / Math.pow(wzrost/100, 2);
+    result = result.toFixed(2);
+    return result;
+}
+
+//Obliczanie powierzchni ciała BSA Mostellera
+function mosteller(wzrost, waga){
+    var result = Math.pow((wzrost * waga / 3600), 0.5);
+    result = result.toFixed(2);
+    return result;
+}
+
+//Obliczanie wagi należnej
+function taton(wzrost, waga, plec){
+    var wagaPrawidlowa = 0;
+    var opis = '';
+    if(plec === 'f'){
+        wagaPrawidlowa = wzrost - (100 + (wzrost - 100) / 10);
+    }
+    else{
+        wagaPrawidlowa = wzrost - (100 + (wzrost - 100) / 20);
+    }
+    wagaPrawidlowa = wagaPrawidlowa.toFixed(2);
+    
+    var nadwaga = wagaPrawidlowa * 1.1;
+    var otylosc = wagaPrawidlowa * 1.2;
+    if(waga < nadwaga){
+        opis = "PRAWIDŁOWA";
+    }
+    else if(nadwaga < waga  && waga < otylosc){
+        opis = "NADWAGA";
+    }
+    else if( waga > otylosc){
+        opis = "OTYLOŚĆ";
+    }
+    var result = wagaPrawidlowa + ' kg ' + opis;
+    return result;
+}
+
+//Obliczanie beztluszczowej masy ciala
+function bmc(waga, wzrost, wiek, plec){
+    var result = 0;
+    //Kobiety
+    if(plec === 'f'){
+        //Wiek 30
+        if(wiek > 30){
+            result = 0.29569 * waga + 0.41813 * wzrost - 43.2933;
+        }
+        else{
+            result = 1.07 * waga - 148 * Math.pow(waga, 2) / Math.pow(100 * wzrost, 1);
+        }
+    }
+    //Mezczyzni
+    else{
+        //Wiek 16
+        if(wiek >= 16){
+            result = 0.32810 * waga + 0.33929 * wzrost - 29.5336;
+        }
+        else{
+            result = 1.1 * waga - 128 * Math.pow(waga, 2) / Math.pow(100 * wzrost, 1);
+        }
+    }
+    result = result.toFixed(2);
+    return result;
+}
+
+//Obliczanie talia/biodro
+function whr(talia, biodro, plec){
+    var result = talia / biodro;
+    var opis = '';
+    if(plec === 'f'){
+        if(result > 0.8) opis = 'JABŁKO';
+        else opis = 'GRUSZKA';
+    }
+    else{
+        if(result > 0.94) opis = 'JABŁKO';
+        else opis = 'GRUSZKA';
+    }
+    result = result.toFixed(2);
+    
+    return result + ' ' + opis;
+}
+
+function whtr(talia, wzrost, plec){
+    var result = 0;
+    var opis = 0;
+    result = talia / wzrost * 100;
+    if(plec === 'f'){
+        if(result < 35){
+            opis = 'Niedyżywiona';
+        }
+        else if(result >= 35 && result < 42){
+            opis = 'Niedowaga';
+        }
+        else if(result >= 42 && result < 46){
+            opis = 'Lekka niedowaga';
+        }
+        else if(result >= 46 && result < 49){
+            opis = 'ZDROWA';
+        }
+        else if(result >= 49 && result < 54){
+            opis = 'Nadwaga';
+        }
+        else if(result >= 54 && result < 58){
+            opis = 'Poważna Nadwaga';
+        }
+        else if(result >= 58 ){
+            opis = 'Otyłość';
+        }
+    }
+    else{
+        if(result < 35){
+            opis = 'Niedyżywienie';
+        }
+        else if(result >= 35 && result < 43){
+            opis = 'Niedowaga';
+        }
+        else if(result >= 43 && result < 46){
+            opis = 'Lekka niedowaga';
+        }
+        else if(result >= 46 && result < 53){
+            opis = 'ZDROWY';
+        }
+        else if(result >= 53 && result < 58){
+            opis = 'Nadwaga';
+        }
+        else if(result >= 58 && result < 63){
+            opis = 'Poważna Nadwaga';
+        }
+        else if(result >= 63 ){
+            opis = 'Otyłość';
+        }
+    }
+    result = result/100;
+    result = result.toFixed(2);
+    return result + ' ' + opis;
+}
+
+function bmr(waga, wzrost, wiek, plec){
+    var result = 0;
+    if(plec === 'f'){
+        result = 9.99 * waga + 6.25 * wzrost - 4.92 * wiek - 161;
+    }
+    else{
+        result = 9.99 * waga + 6.25 * wzrost - 4.92 * wiek + 5;
+    }
+    
+    result = result.toFixed(2);
+    return result;
+}
+
+function kre(kreatynina, kreatyninaUnit, wiek, waga, plec){
+    var wsk = 0;
+    var result = 0;
+    if(plec === 'f'){
+        wsk = 0.85;
+    }
+    else{
+        wsk = 1;
+    }
+    
+    result = (140 - wiek) * waga / 72 * kreatynina * wsk;
+    result = result.toFixed(2);
+    return result;
+}
+
+//Walidacja formularza antropometrii
+function validAntropometria(){
+    var result = false;
+    var waga = $('#wagaVal').val();
+    var talia = $('#taliaVal').val();
+    var wiek = $('#lataUnit').val();
+    var wzrost = $('#wzrostVal').val();
+    var biodra = $('#biodraVal').val();
+    var plec = $('#plecUnit').val();
+    var kreatynina = $('#kreatyninaVal').val();
+    var kreatyninaUnit = $('#kreatyninaUnit').val();
+    if(waga !== '' && waga !== 'NaN' && wzrost !== '' && wzrost !== 'NaN' && talia !== '' && talia !== 'NaN' && biodra !== '' && biodra !== 'NaN'){
+        result = true;
+        $('#wagaVal').prop('style', '');
+        $('#wzrostVal').prop('style', '');
+        $('#taliaVal').prop('style', '');
+        $('#biodraVal').prop('style', '');
+    }
+    else{
+        if(waga === '' || waga === 'NaN') $('#wagaVal').css('border', '1px solid #ff0000');
+        else $('#wagaVal').prop('style', '');
+        
+        if(wzrost === '' || wzrost === 'NaN') $('#wzrostVal').css('border', '1px solid #ff0000');
+        else $('#wzrostVal').prop('style', '');
+        
+        if(talia === '' || talia === 'NaN') $('#taliaVal').css('border', '1px solid #ff0000');
+        else $('#taliaVal').prop('style', '');
+        
+        if(biodra === '' || biodra === 'NaN') $('#biodraVal').css('border', '1px solid #ff0000');
+        else $('#biodraVal').prop('style', '');
+        
+        result = false;
+    }
+    return result;
+
+}
+
 //Działanie indeksów hormonalnych
 function hormonsIndex() {
     //INSULINA
@@ -74,7 +328,7 @@ function hormonsIndex() {
         var result = parseFloat($('#glukozaVal').val()) * parseFloat($('#insulinaVal').val()) / 22.5;
         result = result.toFixed(2);
         if (result !== 'NaN') {
-           $('#odpornoscVal').val(result);
+            $('#odpornoscVal').val(result);
         }
     });
 
