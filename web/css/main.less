@@ -406,6 +406,7 @@ nav {
         font-weight: 600;
     }
     #top {
+        position: relative;
         z-index: 10;
         width: 100%;
     }
@@ -612,6 +613,7 @@ aside {
 }
 footer {
     bottom: 20px;
+    display: none;
     position: absolute;
     width: 100%;
     ul {
@@ -717,9 +719,12 @@ footer {
     .section img {
         display: block;
     }
-    footer ul li {
-        float: left;
-        width: 25%;
+    footer {
+        display: block;
+        ul li {
+            float: left;
+            width: 25%;
+        }
     }
 }
 @media screen and (min-width: 1200px) {

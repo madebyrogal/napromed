@@ -357,16 +357,16 @@ function hormons() {
     //PROGESTERON
     var proArray = ['nmol', 'ng'];
     proArray['nmol'] = [];
-    proArray['nmol']['nmol'] = 1
+    proArray['nmol']['nmol'] = 1;
     proArray['nmol']['ng'] = 0.3145;
     proArray['ng'] = [];
     proArray['ng']['nmol'] = 3.18;
     proArray['ng']['ng'] = 1;
 
     //TESTOSTERON
-    var tesArray = ['nmol', 'ng']
+    var tesArray = ['nmol', 'ng'];
     tesArray['nmol'] = [];
-    tesArray['nmol']['nmol'] = 1
+    tesArray['nmol']['nmol'] = 1;
     tesArray['nmol']['ng'] = 28.8184;
     tesArray['ng'] = [];
     tesArray['ng']['nmol'] = 0.0347;
@@ -634,8 +634,6 @@ function tab() {
             $(this).parent('li').addClass('selected');
 
         }
-
-        //console.log($(this));
     });
 }
 
