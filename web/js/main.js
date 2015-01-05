@@ -341,6 +341,72 @@ function hormonsIndex() {
             $('#insulinaUnit').val('ui');
         }
     });
+    
+    //TESTOSTERON
+    $('#tesCal').click(function(){
+        //Odczyt i konwersja wartości testosteronu
+        var tesVal = $('#tesVal').val();
+        var tesUnit = $('#tesUnit').val();
+        var tesUnitPow = $('#tesUnit').find('option:selected').attr("data");
+        tesVal = tesVal * Math.pow(10, tesUnitPow);
+        if(tesUnit === 'ng'){
+            tesVal = tesVal * 0.0347;
+        }
+        
+        //Odczyt wartości shbg
+        var shbgVal = $('#shbgVal').val();
+        var shbgUnit = $('#shbgUnit').val();
+        
+        //Odczyt i konwersja wartości albuminy
+        var albVal = $('#albVal').val();
+        var albUnit = $('#albUnit').val();
+        var albUnitPow = $('#albUnit').find('option:selected').attr("data");
+        albVal = albVal * Math.pow(10, albUnitPow);
+        
+        //Vermeulen
+        var NV = 10 * Math.pow(10,8);
+        var UV = 3.6 * Math.pow(10,4);
+        //Sodegard
+        var NS = 5.97 * Math.pow(10,8);
+        var US = 4.06 * Math.pow(10,4);
+        //Emadi-Konjin
+        var NE = 1.4 * Math.pow(10,9);
+        var UE = 1.3 * Math.pow(10,4);
+        //Obliczenia dla Vermeulen
+        var FTV = ft(NV, UV, tesVal, shbgVal, albVal);
+        var bioTV = bioT(NV, UV, tesVal, shbgVal, albVal, FTV);
+        $('#bioTV').html(bioTV.toFixed(4));
+        $('#FTV').html(FTV.toFixed(4));
+        
+    });
+}
+
+//Obliczanie współczynnika a
+function wspA(U, N, shbg, alb, T){
+    var a = U + N + ( U * N ) * (shbg + alb - T);
+    return a;
+}
+
+//Obliczanie współczynnika b
+function wspB(U, N, shbg, alb, T){
+    var b = 1 + N * shbg + U * alb - ( U + N ) * T;
+    return b;
+}
+
+//Testosteron biodostępny
+function bioT(N, U, T, shbg, alb, FT){
+    var a = wspA(U, N, shbg, alb, T);
+    var b = wspB(U, N, shbg, alb, T);
+    var bioT = U * alb * FT / ( 1 + U * FT) + FT;
+    return bioT;
+}
+
+//Testosteron wolny
+function ft(N, U, T, shbg, alb){
+    var a = wspA(U, N, shbg, alb, T);
+    var b = wspB(U, N, shbg, alb, T);
+    var ft = (-b + Math.sqrt( Math.pow(b,2) + 4 * a * T) ) / ( 2 * a);
+    return ft;
 }
 
 //Działanie hormonów
@@ -526,9 +592,14 @@ function hormons() {
 function calculateHormon(hormon, unitArray) {
     var val = $('#' + hormon + 'Val').val();
     var unit = $('#' + hormon + 'Unit').val();
+    var pow = $('#' + hormon + 'Unit').find('option:selected').attr("data")
     var unit2 = $('#' + hormon + 'Unit2').val();
+    var pow2 = $('#' + hormon + 'Unit2').find('option:selected').attr("data")
     var val2 = val * unitArray[unit][unit2];
-    val2 = val2.toFixed(2);
+    if(pow !== 'NaN' && typeof pow !== 'undefined' && typeof pow2 !== 'undefined'){
+        val2 = val2 * Math.pow(10,(pow-pow2));
+    }
+    val2 = val2.toFixed(4);
     if (val2 !== 'NaN') {
         $('#' + hormon + 'Val2').val(val2);
     }

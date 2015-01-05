@@ -11,6 +11,7 @@
             <option value="0" selected="selected">WYBIERZ INDEKS ...</option>
             <option value="ins">INSULINOOPORNOŚĆ</option>
             <option value="hom">HOMA IR</option>
+            <option value="tes">TESTOSTERON</option>
         </select>
     </div>
 </div>
@@ -123,6 +124,108 @@
         <tr>
             <td width="35%">Glukoza w [mmol/L]</td>
             <td width="65%">jeżeli > 2,5 → INSULINOOPORNOŚĆ</td>
+        </tr>
+    </table>
+</section>
+<!-- TESTOSTERON -->
+<section id="tes" class="hide hormons">
+    <div class="row clear">
+        <div class="left">
+            <label>Płeć</label>
+            <div>
+                <select id="plecUnit">
+                    <option value="f">żeńska</option>
+                    <option value="m">męska</option>
+                </select>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="left marginT10 marginR10">
+            <label>Całkowity testosteron</label>
+            <div>
+                <input id="tesVal" class="inputVal" type="text" value=""/>
+            </div>
+        </div>
+        <div class="left marginT10">
+            <label>Jednostka</label>
+            <div>
+                <select id="tesUnit">
+                    <option data="-9" value="ng">ng/dL</option>
+                    <option data="-12" value="ng">ng/mL</option>
+                    <option data="-9" value="mol">nmol/L</option>
+                    <option data="-11" value="mol">nmol/dL</option>
+                    <option data="-12" value="mol">nmol/mL</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="left">
+            <label>SHBG</label>
+            <div>
+                <input id="shbgVal" type="text" value=""/>
+            </div>
+        </div>
+        <div class="left">
+            <label>Jednostka</label>
+            <div>
+                <select id="shbgUnit">
+                    <option data="0" value="mol">nmol/L</option>
+                </select>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="left marginT10">
+            <label>Albuminy</label>
+            <div>
+                <input id="albVal" type="text" value=""/>
+            </div>
+        </div>
+        <div class="left marginT10">
+            <label>Jednostka</label>
+            <div>
+                <select id="albUnit">
+                    <option data="0" value="g">g/L</option>
+                    <option data="-1" value="g">g/dL</option>
+                    <option data="0" value="g">mg/mL</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button id="tesCal" type="submit">oblicz</button>
+    </div>
+    <div class="clearfix"></div>
+    <table class="tabelResultDescription">
+        <tr>
+            <th>Metoda obliczeń</th>
+            <th>Testosteron biodostępny (bioT)</th>
+            <th>Testosteron wolny (FT)</th>
+        </tr>
+        <tr>
+            <td width="33%">Vermeulen</td>
+            <td id="bioTV" width="33%"></td>
+            <td id ="FTV" width="33%"></td>
+        </tr>
+        <tr>
+            <td width="33%">Sodegard</td>
+            <td width="33%"></td>
+            <td width="33%"></td>
+        </tr>
+        <tr>
+            <td width="33%">Emadi – Konjin</td>
+            <td width="33%"></td>
+            <td width="33%"></td>
+        </tr>
+        <tr>
+            <td width="33%">Morris</td>
+            <td width="33%"></td>
+            <td width="33%"></td>
+        </tr>
+        <tr>
+            <td width="33%">Ly</td>
+            <td width="33%"></td>
+            <td width="33%"></td>
         </tr>
     </table>
 </section>

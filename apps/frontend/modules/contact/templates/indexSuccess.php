@@ -2,7 +2,7 @@
     <h1><?= $pageContext[0]->getTitle(); ?></h1>    
 </header>
 <section class="doctor-name">
-    <?= $pageContext[0]->getContext(ESC_RAW); ?>
+    <?= $pageContext[0]->getContext(ESC_RAW); ?>    
     <?php include_component('page', 'showContactDetals') ?>
 </section>
 <section class="adress">
