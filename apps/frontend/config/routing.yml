@@ -37,6 +37,10 @@ napotechnologia:
   url:      /naprotechnologia.html  
   param:    { module: naprotech, action: index }
 
+naprotech_doctor:
+  url:      /profesorowie-o-naprotechnologi-i-nieplodnosci.html  
+  param:    { module: profesors, action: index }
+    
 # Niepłodność
 nieplodnosc:
   url:      /nieplodnosc.html  
