@@ -4,6 +4,9 @@
 <section class="top">
     <?= $pageContext[0]->getContext(ESC_RAW) ?>
 </section>
+<section>
+    <?= $pageContext[1]->getContext(ESC_RAW) ?>
+</section>
 <div class="row marginT10">
     <label>Hormony</label>
     <div>

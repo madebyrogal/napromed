@@ -4,6 +4,9 @@
 <section class="top">
     <?= $pageContext[0]->getContext(ESC_RAW) ?>
 </section>
+<section>
+    <?= $pageContext[1]->getContext(ESC_RAW) ?>
+</section>
 <section class="hormons">    
     <div class="row marginT10">
         <div class="left">
