@@ -15,11 +15,6 @@
                     <div class="top-left">
                         <a id="logo" title="Strona główna" href="<?= url_for('@homepage') ?>">
                             <?= image_tag('logo.png', array('alt' => 'Logo')) ?>
-                            <div class="name">
-                                <p><b>NaProMED</b><p> 
-                                <p>Prywatna Praktyka Lekarska</p> 
-                                <p>Piotr Broda</p>
-                            </div>
                         </a>
                         <div id="nav">
                             <a href="#77" title="">MENU</a>
@@ -35,11 +30,6 @@
             <a id="close" title="" href=""><span>UKRYJ</span></a>
             <div class="logo">
                 <?= image_tag('logo_color.png', array('alt' => 'Logo')) ?>
-                <div class="name">
-                    <p><b>NaProMED</b></p><p> 
-                    </p><p>Prywatna Praktyka Lekarska</p> 
-                    <p>Piotr Broda</p>
-                </div>
             </div>
             <?php include_component('page', 'showMenuHeader') ?>
             <?php include_component('page', 'showContactDetals') ?>
