@@ -12,8 +12,11 @@
             <div class="top-wrapper">
                 <div class="wrapper">
                     <a id="logo" title="Strona główna" href="<?= url_for('@homepage') ?>">
-                        <?= image_tag('logo_color.png', array('alt' => 'Logo')) ?>
+                        <?= image_tag('logo_color_static.png', array('alt' => 'Logo')) ?>
                     </a>
+                    <div id="show-menu" >
+                        <a title="" href=""><span>Menu</span></a>
+                    </div>
                     <div class="doctor">
                         <?= image_tag('piotr.png', array('alt' => 'Informacja o lekarzu')) ?>
                     </div>

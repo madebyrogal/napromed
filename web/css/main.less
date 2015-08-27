@@ -313,10 +313,10 @@ nav {
         border-radius: 0 5px 5px 0;
         -webkit-box-shadow: inset 1px 0px 8px 0px #d2d2d2;
         box-shadow: inset 1px 0px 8px 0px #d2d2d2;
-        padding: 14px 16px 14px 15px;
+        padding: 17px 16px 17px 15px;
         position: absolute;
         right: -97px;
-        top: 30px;
+        top: 28px;
         span {
             &:before {
                 background: url(../images/sprite.png) -84px -15px;
@@ -378,7 +378,7 @@ nav {
     float: left;
     font-size: 12px;
     margin: 15px 20px 0 0;
-    width: 31%;
+    /*width: 31%;*/
     img {
         float: left;
         margin-right: 12px;
@@ -392,6 +392,25 @@ nav {
             line-height: 14px;
             margin: 0;
             text-align: left;
+        }
+    }
+}
+#show-menu {
+    float: right;
+    a {
+        //background: url(../images/sprite.png) -83px 2px;
+        display: block;
+        height: 16px;
+        margin: 26px 10px 0 20px;
+        width: 17px;
+        &.show {
+            background: url(../images/sprite.png) -84px -15px;
+        }
+        &.hide {
+            background: url(../images/sprite.png) -83px 2px;
+        }
+        span {
+            display: none;
         }
     }
 }
@@ -496,6 +515,9 @@ aside {
     float: left;
     margin-bottom: 20px;
     width: 100%;
+    &.hide {
+        display: none;
+    }
     ul {
         margin: 0;
         padding: 0;
@@ -739,6 +761,11 @@ footer {
         margin: 20px 0 0 0;
     }
 }
+@media screen and (min-width: 480px){
+    #show-menu a {
+        margin-left: 40px;
+    }
+}
 @media screen and (min-width: 768px) {
     input {
         &[type=text], &[type=password] {
@@ -761,7 +788,7 @@ footer {
         width: 50%;
     }
     #logo {
-        width: 50%;
+        /*width: 50%;*/
         .name {
             display: block;
         }
@@ -790,6 +817,9 @@ footer {
     }
     #logo {
         width: 250px;
+    }
+    #show-menu {
+        display: none;
     }
     #top {
         height: 126px;

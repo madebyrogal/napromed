@@ -11,6 +11,7 @@ $(document).ready(function () {
     hormonsIndex();
     antropometria();
     initMask();
+    showLeftMenu();
 });
 
 $(window).load(function () {
@@ -690,6 +691,23 @@ function isEmail(email) {
     return regex.test(email);
 }
 
+//function check resolution
+
+function checkResolution() {
+    var windowWidth = Math.max( $(window).width(), window.innerWidth),
+    device = "";
+
+    if (windowWidth <= 767) {
+        device = "mobile";
+    } else if (windowWidth <= 1024) {
+        device = "tablet";
+    } else {
+        device = "desktop";
+    }
+
+    return device;
+}
+
 //Obsługa menu oferty
 function tab() {
     $('#tab a').click(function (e) {
@@ -701,7 +719,6 @@ function tab() {
             $('#tab li').removeClass('selected');
             $('article div').removeClass('in');
             $(selector).addClass('in').show();
-            console.log(selector);
             $(this).parent('li').addClass('selected');
 
         }
@@ -745,6 +762,50 @@ function menu() {
      $('nav').css('display','none');
      }
      });*/
+}
+
+function showLeftMenu() {
+    if (checkResolution() === 'desktop') {
+        $('#show-menu a').addClass('hide');
+        $(window).resize(function() {
+            //console.log('pierwsza zmiana');
+            if ($(document).width()>1019) {
+                $('aside').removeClass('hide');
+            }
+            else {
+                //console.log('ukryc aside');
+                $('aside').addClass('hide');
+            }
+        });
+    }
+    else {
+        $('#show-menu a').addClass('show');
+        $('aside').addClass('hide');
+        console.log('tu jestem');
+        /*$('#show-menu a').click(function (e) {
+            e.preventDefault();
+            if($(this).hasClass('show')) {
+                console.log('a ma klase show');
+                $(this).removeClass('show').addClass('hide');
+                $('aside').addClass('hide');
+            }
+            else {
+                $(this).removeClass('hide').addClass('show');
+                console.log('a ma klase hide');
+                $('aside').removeClass('hide');
+            }
+        });
+        $(window).resize(function() {
+            console.log('teste');
+            if ($(document).width()>1019) {
+                $('aside').removeClass('hide');
+            }
+            else {
+                console.log('ukryc aside');
+                $('aside').addClass('hide');
+            }
+        });*/
+    }
 }
 
 function menuStatic() {

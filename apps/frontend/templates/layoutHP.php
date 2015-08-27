@@ -17,7 +17,7 @@
                             <?= image_tag('logo.png', array('alt' => 'Logo')) ?>
                         </a>
                         <div id="nav">
-                            <a href="#77" title="">MENU</a>
+                            <a href="#" title="Menu">MENU</a>
                         </div>
                     </div>
                     <div class="doctor">

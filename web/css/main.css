@@ -298,10 +298,10 @@ nav #close {
   border-radius: 0 5px 5px 0;
   -webkit-box-shadow: inset 1px 0px 8px 0px #d2d2d2;
   box-shadow: inset 1px 0px 8px 0px #d2d2d2;
-  padding: 14px 16px 14px 15px;
+  padding: 17px 16px 17px 15px;
   position: absolute;
   right: -97px;
-  top: 30px;
+  top: 28px;
 }
 nav #close span {
   text-transform: uppercase;
@@ -356,7 +356,7 @@ nav .about a.telephon {
   float: left;
   font-size: 12px;
   margin: 15px 20px 0 0;
-  width: 31%;
+  /*width: 31%;*/
 }
 #logo img {
   float: left;
@@ -372,6 +372,24 @@ nav .about a.telephon {
   line-height: 14px;
   margin: 0;
   text-align: left;
+}
+#show-menu {
+  float: right;
+}
+#show-menu a {
+  display: block;
+  height: 16px;
+  margin: 26px 10px 0 20px;
+  width: 17px;
+}
+#show-menu a.show {
+  background: url(../images/sprite.png) -84px -15px;
+}
+#show-menu a.hide {
+  background: url(../images/sprite.png) -83px 2px;
+}
+#show-menu a span {
+  display: none;
 }
 .home {
   background-color: #000;
@@ -472,6 +490,9 @@ aside {
   float: left;
   margin-bottom: 20px;
   width: 100%;
+}
+aside.hide {
+  display: none;
 }
 aside ul {
   margin: 0;
@@ -707,6 +728,11 @@ footer.footer-other {
   position: static;
   margin: 20px 0 0 0;
 }
+@media screen and (min-width: 480px) {
+  #show-menu a {
+    margin-left: 40px;
+  }
+}
 @media screen and (min-width: 768px) {
   input[type=text],
   input[type=password] {
@@ -728,7 +754,7 @@ footer.footer-other {
     width: 50%;
   }
   #logo {
-    width: 50%;
+    /*width: 50%;*/
   }
   #logo .name {
     display: block;
@@ -756,8 +782,11 @@ footer.footer-other {
   #logo {
     width: 250px;
   }
+  #show-menu {
+    display: none;
+  }
   #top {
-    height: 153px;
+    height: 126px;
   }
   #top .top-wrapper {
     background-color: #fff;
@@ -809,7 +838,7 @@ footer.footer-other {
   }
   .static #logo {
     background: url(../images/border_menu_top.jpg) no-repeat top right;
-    height: 140px;
+    height: 111px;
   }
   .content header {
     border-bottom: 1px solid #e9e9e9;
@@ -870,4 +899,3 @@ footer.footer-other {
 .clearfix {
   *zoom: 1;
 }
-/*# sourceMappingURL=main.css.map */
