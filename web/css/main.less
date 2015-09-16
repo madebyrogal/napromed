@@ -6,16 +6,17 @@
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
 }
-.marginT10{
+.marginT102 {
     margin-top: 10px;
 }
-.marginR10{
+.marginR10 {
     margin-right: 10px;
 }
-.clear{
+.clear {
     clear: both;
 }
-.hide{
+
+.hide {
     display: none;
 }
 body {
@@ -60,6 +61,33 @@ ul {
         background: url(../images/sprite.png) no-repeat 0 -173px;
         line-height: 29px;
         padding-left: 28px;
+    }
+    &.files li {
+        background: none;
+        line-height: 18px;
+        margin-bottom: 10px;
+        padding: 14px 0 12px 60px;
+        position: relative;
+        &:before {
+            background-image: url(../images/files.png);
+            background-position:  -20px -10px;
+            background-repeat: no-repeat;
+            content: "";
+            height: 47px;
+            left: 0;
+            position: absolute;
+            width: 52px;
+            top: 0;
+        }
+        &.pdf:before{
+            background-position: -303px -10px;
+        }
+        &.doc:before{
+            background-position: -22px -282px;
+        }
+        &.jpg:before{
+            background-position: -117px -373px;
+        }
     }
 }
 ol {
@@ -230,6 +258,42 @@ table {
         a{
             display: block;
         }
+    }
+}
+#ciasteczka_alert {
+    display: none;
+    position: absolute;
+    height: 55px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 465px;
+    left: 275px;
+    z-index: 10;
+    a {
+        color: #fff;
+        font-weight: bold;
+    }
+    ul {
+        margin: 5px 0 0 0;
+        li {
+            list-style: none;
+            margin-right: 5px;
+            color: #fff;
+            height: 50px;
+            float: left
+        }
+    }
+}
+.cookie {
+    background: url('../images/common/cookie.png') no-repeat;
+    width: 47px;
+    a {
+        background: url('../images/common/cookie_close.png') no-repeat;
+        width: 16px;
+        cursor: pointer;
+        margin-left: 10px;
+        display: block;
+        height: 16px;
     }
 }
 #nav {
