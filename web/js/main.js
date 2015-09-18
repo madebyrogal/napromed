@@ -37,6 +37,10 @@ $(window).load(function () {
     }
 });
 
+$(window).resize(function() {
+    showLeftMenu();
+});
+
 //Maska na inputy
 function initMask() {
     $('.inputVal').keyup(function () {
@@ -765,46 +769,25 @@ function menu() {
 }
 
 function showLeftMenu() {
+    console.log(checkResolution());
     if (checkResolution() === 'desktop') {
-        $('#show-menu a').addClass('hide');
-        $(window).resize(function() {
-            //console.log('pierwsza zmiana');
-            if ($(document).width()>1019) {
-                $('aside').removeClass('hide');
-            }
-            else {
-                //console.log('ukryc aside');
-                $('aside').addClass('hide');
-            }
-        });
+        $('#show-menu a').removeClass('show').addClass('hide');
+        $('aside').removeClass('hide');
     }
     else {
-        $('#show-menu a').addClass('show');
+        $('#show-menu a').removeClass('show').addClass('hide');
         $('aside').addClass('hide');
-        console.log('tu jestem');
-        /*$('#show-menu a').click(function (e) {
+        $('#show-menu a').click(function (e) {
             e.preventDefault();
             if($(this).hasClass('show')) {
-                console.log('a ma klase show');
                 $(this).removeClass('show').addClass('hide');
                 $('aside').addClass('hide');
             }
             else {
                 $(this).removeClass('hide').addClass('show');
-                console.log('a ma klase hide');
                 $('aside').removeClass('hide');
             }
-        });
-        $(window).resize(function() {
-            console.log('teste');
-            if ($(document).width()>1019) {
-                $('aside').removeClass('hide');
-            }
-            else {
-                console.log('ukryc aside');
-                $('aside').addClass('hide');
-            }
-        });*/
+        });  
     }
 }
 
