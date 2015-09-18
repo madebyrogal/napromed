@@ -769,7 +769,6 @@ function menu() {
 }
 
 function showLeftMenu() {
-    console.log(checkResolution());
     if (checkResolution() === 'desktop') {
         $('#show-menu a').removeClass('show').addClass('hide');
         $('aside').removeClass('hide');
