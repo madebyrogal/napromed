@@ -13,7 +13,7 @@
 class pageComponents extends sfComponents {
 
     public function executeShowMenuHeader(sfWebRequest $request) {        
-        $pages = pageTable::getMenuHeader();
+        $pages = pageTable::getMenuHeader();        
         $menu = array();
         foreach ($pages as $key => $page) {
             $menu[$key]['page'] = $page;
@@ -54,6 +54,10 @@ class pageComponents extends sfComponents {
                 break;
             case 'przeliczniki':
                 $page = pageTable::getPageByRouteHash('conversions');
+                $this->activePageId = $page->getId();
+                break;
+            case 'news':           
+                $page = pageTable::getPageByRouteHash('news');
                 $this->activePageId = $page->getId();
                 break;
             default:

@@ -85,3 +85,7 @@ contact:
 contact_send:
   url:      /wyslij-formularz.html
   param:    { module: contact, action: send }
+  
+news:
+  url:      /wiadomosci.html
+  param:    { module: news, action: index }
