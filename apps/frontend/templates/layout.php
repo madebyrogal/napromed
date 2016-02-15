@@ -28,8 +28,7 @@
             <aside>
                 <?php include_component('page', 'showMenuHeader') ?>
                 <?php include_component('page', 'showContactDetals') ?>
-                <a target="_blank" href="http://www.wydawnictwofronda.pl/nadzieja-na-dziecko-czyli-cala-prawda-o-naprotechnologii-3"><img src="/images/nadzieja.jpg"></a>
-                <a href="http://napromed.pl/naprotechnologia-do-pobrania.html"><img src="/images/in-vitro.jpg"></a>
+                <?php include_partial('common/banners'); ?>                
             </aside>
             <section class="content">
                 <?= $sf_content ?>                
