@@ -1,7 +1,7 @@
 # Cache and logs
-/cache
+/cache/*
 !/cache/.gitkeep
-/log
+/log/*
 !/log/.gitkeep
 
 # Others
