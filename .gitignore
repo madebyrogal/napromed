@@ -7,3 +7,6 @@
 # Others
 /nbproject
 
+# Vendors
+/node_modules
+/web/vendor

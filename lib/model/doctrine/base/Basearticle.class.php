@@ -82,7 +82,7 @@ abstract class Basearticle extends sfDoctrineRecord
              'onDelete' => 'SET NULL'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
-        $i18n0 = new Doctrine_Template_i18N(array(
+        $i18n0 = new Doctrine_Template_I18n(array(
              'fields' => 
              array(
               0 => 'title',

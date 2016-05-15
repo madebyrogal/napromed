@@ -85,7 +85,13 @@ contact:
 contact_send:
   url:      /wyslij-formularz.html
   param:    { module: contact, action: send }
-  
+
+# Facebook
 news:
   url:      /wiadomosci.html
   param:    { module: news, action: index }
+
+# Artykuły
+article:
+  url:      /artykuly.html
+  param:    { module: news, action: articles }

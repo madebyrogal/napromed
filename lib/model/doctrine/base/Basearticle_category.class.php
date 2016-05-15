@@ -44,7 +44,7 @@ abstract class Basearticle_category extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'article_category_id'));
 
-        $i18n0 = new Doctrine_Template_i18N(array(
+        $i18n0 = new Doctrine_Template_I18n(array(
              'fields' => 
              array(
               0 => 'name',
