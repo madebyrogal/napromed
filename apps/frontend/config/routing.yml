@@ -95,3 +95,10 @@ news:
 article:
   url:      /artykuly.html
   param:    { module: news, action: articles }
+  
+# Aktualnosci - pokaz
+article_show:
+  url:      /artykuly/:id/:slug.html
+  class:    sfDoctrineRoute
+  options:  { model: article, type: object }
+  param:    { module: news, action: show }

@@ -36,5 +36,10 @@ class newsActions extends sfActions
         //Get articles
         $this->articles = articleTable::getAll();
     }
+    
+    public function executeShow(sfWebRequest $request)
+    {
+        $this->article = $this->getRoute()->getObject();
+    }
 
 }

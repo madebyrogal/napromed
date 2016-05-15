@@ -18,7 +18,7 @@ TinyBrowser 1.41 - A TinyMCE file browser (C) 2008  Bryn Jones
 */
 
 // switch off error handling, to use custom handler
-error_reporting(0); 
+error_reporting(E_ALL); 
 
 //localhost path
 define('LOCAL_HOST_PATH', '/');
