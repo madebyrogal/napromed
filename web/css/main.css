@@ -3068,3 +3068,8 @@ footer.footer-other {
   font-size: 12px;
   font-style: italic;
 }
+.articles article .sneak-peak img {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
