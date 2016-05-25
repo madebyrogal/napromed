@@ -1,18 +1,23 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Dosis&subset=latin,latin-ext);
 @import "../vendor/font-awesome/less/font-awesome.less";
+@import "include/variable.less";
+@import "include/article.less";
 
 * {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
 }
+
 .marginT102 {
     margin-top: 10px;
 }
+
 .marginR10 {
     margin-right: 10px;
 }
+
 .clear {
     clear: both;
 }
@@ -20,6 +25,7 @@
 .hide {
     display: none;
 }
+
 body {
     background-color: #fff;
     color: #313131;
@@ -29,31 +35,44 @@ body {
     padding: 0;
     position: relative;
 }
+
 a {
     color: #339a99;
     text-decoration: none;
 }
+
 b, strong{
     color: #339a99;
 }
+
+hr{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px dashed #339a99;
+}
+
 h1 {
     color: #333333;
     font-size: 36px;
     font-weight: 400;
     margin: 0 0 10px;
 }
+
 h2 {
 
 }
+
 h3 {
 
 }
+
 p {
     font-size: 14px;
     line-height: 29px;
     margin: 13px 0;
     text-align: justify;
 }
+
 ul {
     list-style-type: none;
     margin: 0 0 0 20px;
@@ -91,6 +110,7 @@ ul {
         }
     }
 }
+
 ol {
     li {
         line-height: 29px;
@@ -100,9 +120,11 @@ ol {
         }
     }
 }
+
 img {
     max-width: 100%;
 }
+
 label {
     color: #010101;
     display: block;
@@ -111,6 +133,7 @@ label {
     margin-bottom: 5px;
     text-transform: uppercase;
 }
+
 input {
     padding: 0;
     &[type=text], &[type=password] {
@@ -130,6 +153,7 @@ input {
     }
 
 }
+
 button {
     background-color: #339a99;
     border: 2px solid #2a8c8b;
@@ -150,6 +174,7 @@ button {
         background-color: #fff;
     }
 }
+
 select {
     border: 1px solid #dbdbdb;
     -webkit-border-radius: 3px 3px 3px 3px;
@@ -163,6 +188,7 @@ select {
         border-color: #339a99;
     }
 }
+
 .checkbox {
     label {
         line-height: 22px;
@@ -192,6 +218,7 @@ select {
         }
     }
 }
+
 table {
     border-collapse: collapse;
     font-size: 13px;
@@ -227,33 +254,40 @@ table {
         }
     }
 }
+
 .loader {
     img {
         display: block;
         margin: 0 auto;
     }
 }
+
 .row {
     margin-bottom: 12px;
 }
+
 .wrapper {
     margin: 0 2%;
     width: 96%;
 }
+
 .line {
     display: block;
     margin: 0 auto;
 }
+
 .static {
     footer {
         position: static;
         margin-bottom: 20px;
     }
 }
+
 .section img {
     display: none;
     float: right;
 }
+
 .doctor-name{
     .about{
         a{
@@ -261,6 +295,7 @@ table {
         }
     }
 }
+
 #ciasteczka_alert {
     display: none;
     position: absolute;
@@ -285,6 +320,7 @@ table {
         }
     }
 }
+
 .cookie {
     background: url('../images/common/cookie.png') no-repeat;
     width: 47px;
@@ -297,6 +333,7 @@ table {
         height: 16px;
     }
 }
+
 #nav {
     float: left;
     margin: 30px 20px 0 0;
@@ -314,6 +351,7 @@ table {
         }
     }
 }
+
 nav {
     background-color: #fff;
     height: 100%;
@@ -427,6 +465,7 @@ nav {
         }
     }
 }
+
 #top {
     .top-left {
         &.hide {
@@ -437,6 +476,7 @@ nav {
         }
     }
 }
+
 #logo {
     color: #919191;
     display: inline-block;
@@ -460,6 +500,7 @@ nav {
         }
     }
 }
+
 #show-menu {
     float: right;
     a {
@@ -479,6 +520,7 @@ nav {
         }
     }
 }
+
 .home {
     background-color: #000;
     h1 {
@@ -545,6 +587,7 @@ nav {
         }
     }
 }
+
 .doctor {
     cursor: pointer;
     float: right;
@@ -567,6 +610,7 @@ nav {
         border-color: #339a99;
     }
 }
+
 nav {
     &.hide {
         display: none;
@@ -575,6 +619,7 @@ nav {
         display: block;
     }
 }
+
 aside {
     clear: left;
     float: left;
@@ -698,11 +743,13 @@ aside {
         }
     }
 }
+
 .content {
     float: left;
     padding-top: 10px;
     width: 100%;
 }
+
 .faq {
     ul {
         list-style-type: none;
@@ -805,6 +852,7 @@ aside {
         }
     }
 }
+
 footer {
     bottom: 20px;
     display: none;
@@ -826,6 +874,7 @@ footer {
         margin: 20px 0 0 0;
     }
 }
+
 @media screen and (min-width: 480px){
     #show-menu a {
         margin-left: 40px;
@@ -1010,35 +1059,4 @@ footer {
 }
 .clearfix {
     *zoom: 1;
-}
-
-//Articles
-.articles{
-    margin-top: 40px;
-    
-    article{
-        border-bottom: 1px dashed #339a99;
-        
-        .title {
-            color: #339a99;
-        }
-        
-        .author{
-            font-size: 12px;
-            font-style: italic
-        }
-        
-        .date{
-            font-size: 12px;
-            font-style: italic
-        }
-        
-        .sneak-peak{
-            img{
-                float: left;
-                margin-right: 20px;
-                margin-bottom: 20px;
-            }
-        }
-    }
 }

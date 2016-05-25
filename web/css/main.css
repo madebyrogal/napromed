@@ -2086,6 +2086,34 @@
 .fa-percent:before {
   content: "\f295";
 }
+.articles {
+  margin-top: 40px;
+}
+.articles article {
+  border-bottom: 1px dashed #339a99;
+}
+.articles article .title {
+  color: #339a99;
+}
+.articles article .author {
+  font-size: 12px;
+  font-style: italic;
+}
+.articles article .date {
+  font-size: 12px;
+  font-style: italic;
+}
+.articles article .sneak-peak img {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.gallery-image-wrapper {
+  display: inline-block;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
 * {
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
@@ -2121,6 +2149,11 @@ a {
 b,
 strong {
   color: #339a99;
+}
+hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px dashed #339a99;
 }
 h1 {
   color: #333333;
@@ -3050,26 +3083,4 @@ footer.footer-other {
 }
 .clearfix {
   *zoom: 1;
-}
-.articles {
-  margin-top: 40px;
-}
-.articles article {
-  border-bottom: 1px dashed #339a99;
-}
-.articles article .title {
-  color: #339a99;
-}
-.articles article .author {
-  font-size: 12px;
-  font-style: italic;
-}
-.articles article .date {
-  font-size: 12px;
-  font-style: italic;
-}
-.articles article .sneak-peak img {
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 20px;
 }

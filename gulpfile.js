@@ -24,7 +24,7 @@ gulp.task('less', function () {
 
 // Watch Files For Changes
 gulp.task('watch', function () {
-    gulp.watch('web/css/*.less', ['less']);
+    gulp.watch(['web/css/*.less','web/css/**/*.less'], ['less']);
 });
 
 gulp.task('cleanCSS', function () {

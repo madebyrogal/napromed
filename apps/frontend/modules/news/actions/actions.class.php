@@ -40,6 +40,7 @@ class newsActions extends sfActions
     public function executeShow(sfWebRequest $request)
     {
         $this->article = $this->getRoute()->getObject();
+        $this->gallery = mediaTable::getGallery('article', $this->article->getId());
     }
 
 }
