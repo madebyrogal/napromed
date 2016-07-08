@@ -7,7 +7,7 @@ dev:
     param:
       dsn:      mysql:host=localhost;dbname=napromed_dev
       username: root
-      password: 
+      password: root
       attributes:
         default_table_collate: utf8_polish_ci
         default_table_charset: utf8
@@ -17,7 +17,7 @@ prod:
     param:
       dsn:      mysql:host=localhost;dbname=napromed_dev
       username: root
-      password: 
+      password: root
       attributes:
         default_table_collate: utf8_polish_ci
         default_table_charset: utf8

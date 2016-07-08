@@ -17,6 +17,7 @@
         "tests"
     ],
     "dependencies":{
-        "font-awesome": "4.5.*"
+        "font-awesome": "4.5.*",
+        "twbs/bootstrap": "^3.3.6"
     }
 }

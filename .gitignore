@@ -4,6 +4,9 @@
 /log/*
 !/log/.gitkeep
 
+# Configs
+config/databases.yml
+
 # Others
 /nbproject
 
