@@ -13,9 +13,18 @@ default:
     #robots:       index, follow
     viewport:      width=device-width, initial-scale=1
 
-  stylesheets:    [main.css]
+  stylesheets:  
+    - "../vendor/magnific-popup/dist/magnific-popup.css"
+    - "main.css"
 
-  javascripts:    [jquery.js, main.js, cookie/jquery.cookie.js, jquery.onepage-scroll.min.js, mask/jquery.mask.min.js, google-analytics.js]
+  javascripts:
+    - "../vendor/jquery/dist/jquery.min.js"
+    - "../vendor/magnific-popup/dist/jquery.magnific-popup.min.js"
+    - "main.js"
+    - "cookie/jquery.cookie.js"
+    - "jquery.onepage-scroll.min.js"
+    - "mask/jquery.mask.min.js"
+    - "google-analytics.js"
 
   has_layout:     true
   layout:         layout

@@ -18,6 +18,7 @@
     ],
     "dependencies":{
         "font-awesome": "4.5.*",
-        "twbs/bootstrap": "^3.3.6"
+        "twbs/bootstrap": "^3.3.6",
+        "magnific-popup": "1.1.0"
     }
 }

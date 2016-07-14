@@ -12,6 +12,7 @@ $(document).ready(function () {
     antropometria();
     initMask();
     showLeftMenu();
+    initArticleGallery();
 });
 
 $(window).load(function () {
@@ -37,7 +38,7 @@ $(window).load(function () {
     }
 });
 
-$(window).resize(function() {
+$(window).resize(function () {
     showLeftMenu();
 });
 
@@ -55,7 +56,7 @@ function initMask() {
 function antropometria() {
     $('#antropometriaCal').click(function () {
         //validacja
-        if(validAntropometria()){
+        if (validAntropometria()) {
             var wzrost = $('#wzrostVal').val();
             var waga = $('#wagaVal').val();
             var talia = $('#taliaVal').val();
@@ -72,68 +73,62 @@ function antropometria() {
             $('#whr').html(whr(talia, biodra, plec));
             $('#whtr').html(whtr(talia, wzrost, plec));
             $('#bmr').html(bmr(waga, wzrost, wiek, plec));
-            if( kreatynina !== '' && kreatynina !== 'NaN'){
+            if (kreatynina !== '' && kreatynina !== 'NaN') {
                 $('#kre').html(kre(kreatynina, kreatyninaUnit, wiek, waga, plec));
-            }
-            else{
+            } else {
                 $('#kre').html('---');
             }
-            if(wzrost > 150){
+            if (wzrost > 150) {
                 $('#lorenz').html(lorenz(wzrost));
-            }
-            else{
+            } else {
                 $('#lorenz').html('---');
             }
             $('#antropometriaResult').show();
-        }
-        else{
+        } else {
             $('#antropometriaResult').hide();
         }
     });
 }
 
 //Idealna masa ciała wg Lorenza
-function lorenz(wzrost){
-    var result = (wzrost - 100) - (wzrost - 150)/4
+function lorenz(wzrost) {
+    var result = (wzrost - 100) - (wzrost - 150) / 4
     result = result.toFixed(2);
     return result;
 }
 
 //Indeks masy ciała BMI
-function bmi(waga, wzrost){
-    var result = waga / Math.pow(wzrost/100, 2);
+function bmi(waga, wzrost) {
+    var result = waga / Math.pow(wzrost / 100, 2);
     result = result.toFixed(2);
     return result;
 }
 
 //Obliczanie powierzchni ciała BSA Mostellera
-function mosteller(wzrost, waga){
+function mosteller(wzrost, waga) {
     var result = Math.pow((wzrost * waga / 3600), 0.5);
     result = result.toFixed(2);
     return result;
 }
 
 //Obliczanie wagi należnej
-function taton(wzrost, waga, plec){
+function taton(wzrost, waga, plec) {
     var wagaPrawidlowa = 0;
     var opis = '';
-    if(plec === 'f'){
+    if (plec === 'f') {
         wagaPrawidlowa = wzrost - (100 + (wzrost - 100) / 10);
-    }
-    else{
+    } else {
         wagaPrawidlowa = wzrost - (100 + (wzrost - 100) / 20);
     }
     wagaPrawidlowa = wagaPrawidlowa.toFixed(2);
-    
+
     var nadwaga = wagaPrawidlowa * 1.1;
     var otylosc = wagaPrawidlowa * 1.2;
-    if(waga < nadwaga){
+    if (waga < nadwaga) {
         opis = "PRAWIDŁOWA";
-    }
-    else if(nadwaga < waga  && waga < otylosc){
+    } else if (nadwaga < waga && waga < otylosc) {
         opis = "NADWAGA";
-    }
-    else if( waga > otylosc){
+    } else if (waga > otylosc) {
         opis = "OTYLOŚĆ";
     }
     var result = wagaPrawidlowa + ' kg ' + opis;
@@ -141,25 +136,23 @@ function taton(wzrost, waga, plec){
 }
 
 //Obliczanie beztluszczowej masy ciala
-function bmc(waga, wzrost, wiek, plec){
+function bmc(waga, wzrost, wiek, plec) {
     var result = 0;
     //Kobiety
-    if(plec === 'f'){
+    if (plec === 'f') {
         //Wiek 30
-        if(wiek > 30){
+        if (wiek > 30) {
             result = 0.29569 * waga + 0.41813 * wzrost - 43.2933;
-        }
-        else{
+        } else {
             result = 1.07 * waga - 148 * Math.pow(waga, 2) / Math.pow(100 * wzrost, 1);
         }
     }
     //Mezczyzni
-    else{
+    else {
         //Wiek 16
-        if(wiek >= 16){
+        if (wiek >= 16) {
             result = 0.32810 * waga + 0.33929 * wzrost - 29.5336;
-        }
-        else{
+        } else {
             result = 1.1 * waga - 128 * Math.pow(waga, 2) / Math.pow(100 * wzrost, 1);
         }
     }
@@ -168,107 +161,95 @@ function bmc(waga, wzrost, wiek, plec){
 }
 
 //Obliczanie talia/biodro
-function whr(talia, biodro, plec){
+function whr(talia, biodro, plec) {
     var result = talia / biodro;
     var opis = '';
-    if(plec === 'f'){
-        if(result > 0.8) opis = 'JABŁKO';
-        else opis = 'GRUSZKA';
-    }
-    else{
-        if(result > 0.94) opis = 'JABŁKO';
-        else opis = 'GRUSZKA';
+    if (plec === 'f') {
+        if (result > 0.8)
+            opis = 'JABŁKO';
+        else
+            opis = 'GRUSZKA';
+    } else {
+        if (result > 0.94)
+            opis = 'JABŁKO';
+        else
+            opis = 'GRUSZKA';
     }
     result = result.toFixed(2);
-    
+
     return result + ' ' + opis;
 }
 
-function whtr(talia, wzrost, plec){
+function whtr(talia, wzrost, plec) {
     var result = 0;
     var opis = 0;
     result = talia / wzrost * 100;
-    if(plec === 'f'){
-        if(result < 35){
+    if (plec === 'f') {
+        if (result < 35) {
             opis = 'Niedyżywiona';
-        }
-        else if(result >= 35 && result < 42){
+        } else if (result >= 35 && result < 42) {
             opis = 'Niedowaga';
-        }
-        else if(result >= 42 && result < 46){
+        } else if (result >= 42 && result < 46) {
             opis = 'Lekka niedowaga';
-        }
-        else if(result >= 46 && result < 49){
+        } else if (result >= 46 && result < 49) {
             opis = 'ZDROWA';
-        }
-        else if(result >= 49 && result < 54){
+        } else if (result >= 49 && result < 54) {
             opis = 'Nadwaga';
-        }
-        else if(result >= 54 && result < 58){
+        } else if (result >= 54 && result < 58) {
             opis = 'Poważna Nadwaga';
-        }
-        else if(result >= 58 ){
+        } else if (result >= 58) {
             opis = 'Otyłość';
         }
-    }
-    else{
-        if(result < 35){
+    } else {
+        if (result < 35) {
             opis = 'Niedyżywienie';
-        }
-        else if(result >= 35 && result < 43){
+        } else if (result >= 35 && result < 43) {
             opis = 'Niedowaga';
-        }
-        else if(result >= 43 && result < 46){
+        } else if (result >= 43 && result < 46) {
             opis = 'Lekka niedowaga';
-        }
-        else if(result >= 46 && result < 53){
+        } else if (result >= 46 && result < 53) {
             opis = 'ZDROWY';
-        }
-        else if(result >= 53 && result < 58){
+        } else if (result >= 53 && result < 58) {
             opis = 'Nadwaga';
-        }
-        else if(result >= 58 && result < 63){
+        } else if (result >= 58 && result < 63) {
             opis = 'Poważna Nadwaga';
-        }
-        else if(result >= 63 ){
+        } else if (result >= 63) {
             opis = 'Otyłość';
         }
     }
-    result = result/100;
+    result = result / 100;
     result = result.toFixed(2);
     return result + ' ' + opis;
 }
 
-function bmr(waga, wzrost, wiek, plec){
+function bmr(waga, wzrost, wiek, plec) {
     var result = 0;
-    if(plec === 'f'){
+    if (plec === 'f') {
         result = 9.99 * waga + 6.25 * wzrost - 4.92 * wiek - 161;
-    }
-    else{
+    } else {
         result = 9.99 * waga + 6.25 * wzrost - 4.92 * wiek + 5;
     }
-    
+
     result = result.toFixed(2);
     return result;
 }
 
-function kre(kreatynina, kreatyninaUnit, wiek, waga, plec){
+function kre(kreatynina, kreatyninaUnit, wiek, waga, plec) {
     var wsk = 0;
     var result = 0;
-    if(plec === 'f'){
+    if (plec === 'f') {
         wsk = 0.85;
-    }
-    else{
+    } else {
         wsk = 1;
     }
-    
+
     result = (140 - wiek) * waga / 72 * kreatynina * wsk;
     result = result.toFixed(2);
     return result;
 }
 
 //Walidacja formularza antropometrii
-function validAntropometria(){
+function validAntropometria() {
     var result = false;
     var waga = $('#wagaVal').val();
     var talia = $('#taliaVal').val();
@@ -278,26 +259,33 @@ function validAntropometria(){
     var plec = $('#plecUnit').val();
     var kreatynina = $('#kreatyninaVal').val();
     var kreatyninaUnit = $('#kreatyninaUnit').val();
-    if(waga !== '' && waga !== 'NaN' && wzrost !== '' && wzrost !== 'NaN' && talia !== '' && talia !== 'NaN' && biodra !== '' && biodra !== 'NaN'){
+    if (waga !== '' && waga !== 'NaN' && wzrost !== '' && wzrost !== 'NaN' && talia !== '' && talia !== 'NaN' && biodra !== '' && biodra !== 'NaN') {
         result = true;
         $('#wagaVal').prop('style', '');
         $('#wzrostVal').prop('style', '');
         $('#taliaVal').prop('style', '');
         $('#biodraVal').prop('style', '');
-    }
-    else{
-        if(waga === '' || waga === 'NaN') $('#wagaVal').css('border', '1px solid #ff0000');
-        else $('#wagaVal').prop('style', '');
-        
-        if(wzrost === '' || wzrost === 'NaN') $('#wzrostVal').css('border', '1px solid #ff0000');
-        else $('#wzrostVal').prop('style', '');
-        
-        if(talia === '' || talia === 'NaN') $('#taliaVal').css('border', '1px solid #ff0000');
-        else $('#taliaVal').prop('style', '');
-        
-        if(biodra === '' || biodra === 'NaN') $('#biodraVal').css('border', '1px solid #ff0000');
-        else $('#biodraVal').prop('style', '');
-        
+    } else {
+        if (waga === '' || waga === 'NaN')
+            $('#wagaVal').css('border', '1px solid #ff0000');
+        else
+            $('#wagaVal').prop('style', '');
+
+        if (wzrost === '' || wzrost === 'NaN')
+            $('#wzrostVal').css('border', '1px solid #ff0000');
+        else
+            $('#wzrostVal').prop('style', '');
+
+        if (talia === '' || talia === 'NaN')
+            $('#taliaVal').css('border', '1px solid #ff0000');
+        else
+            $('#taliaVal').prop('style', '');
+
+        if (biodra === '' || biodra === 'NaN')
+            $('#biodraVal').css('border', '1px solid #ff0000');
+        else
+            $('#biodraVal').prop('style', '');
+
         result = false;
     }
     return result;
@@ -341,76 +329,75 @@ function hormonsIndex() {
         var unit = $(this).val();
         if (unit === 'mg') {
             $('#insulinaUnit').val('ug');
-        }
-        else {
+        } else {
             $('#insulinaUnit').val('ui');
         }
     });
-    
+
     //TESTOSTERON
-    $('#tesCal').click(function(){
+    $('#tesCal').click(function () {
         //Odczyt i konwersja wartości testosteronu
         var tesVal = $('#tesVal').val();
         var tesUnit = $('#tesUnit').val();
         var tesUnitPow = $('#tesUnit').find('option:selected').attr("data");
         tesVal = tesVal * Math.pow(10, tesUnitPow);
-        if(tesUnit === 'ng'){
+        if (tesUnit === 'ng') {
             tesVal = tesVal * 0.0347;
         }
-        
+
         //Odczyt wartości shbg
         var shbgVal = $('#shbgVal').val();
         var shbgUnit = $('#shbgUnit').val();
-        
+
         //Odczyt i konwersja wartości albuminy
         var albVal = $('#albVal').val();
         var albUnit = $('#albUnit').val();
         var albUnitPow = $('#albUnit').find('option:selected').attr("data");
         albVal = albVal * Math.pow(10, albUnitPow);
-        
+
         //Vermeulen
-        var NV = 10 * Math.pow(10,8);
-        var UV = 3.6 * Math.pow(10,4);
+        var NV = 10 * Math.pow(10, 8);
+        var UV = 3.6 * Math.pow(10, 4);
         //Sodegard
-        var NS = 5.97 * Math.pow(10,8);
-        var US = 4.06 * Math.pow(10,4);
+        var NS = 5.97 * Math.pow(10, 8);
+        var US = 4.06 * Math.pow(10, 4);
         //Emadi-Konjin
-        var NE = 1.4 * Math.pow(10,9);
-        var UE = 1.3 * Math.pow(10,4);
+        var NE = 1.4 * Math.pow(10, 9);
+        var UE = 1.3 * Math.pow(10, 4);
         //Obliczenia dla Vermeulen
         var FTV = ft(NV, UV, tesVal, shbgVal, albVal);
         var bioTV = bioT(NV, UV, tesVal, shbgVal, albVal, FTV);
         $('#bioTV').html(bioTV.toFixed(4));
         $('#FTV').html(FTV.toFixed(4));
-        
+
     });
 }
 
 //Obliczanie współczynnika a
-function wspA(U, N, shbg, alb, T){
-    var a = U + N + ( U * N ) * (shbg + alb - T);
+function wspA(U, N, shbg, alb, T) {
+    var a = U + N + (U * N) * (shbg + alb - T);
     return a;
 }
 
 //Obliczanie współczynnika b
-function wspB(U, N, shbg, alb, T){
-    var b = 1 + N * shbg + U * alb - ( U + N ) * T;
+function wspB(U, N, shbg, alb, T) {
+    var b = 1 + N * shbg + U * alb - (U + N) * T;
     return b;
 }
 
 //Testosteron biodostępny
-function bioT(N, U, T, shbg, alb, FT){
+function bioT(N, U, T, shbg, alb, FT) {
     var a = wspA(U, N, shbg, alb, T);
     var b = wspB(U, N, shbg, alb, T);
-    var bioT = U * alb * FT / ( 1 + U * FT) + FT;
+    var bioT = U * alb * FT / (1 + U * FT) + FT;
     return bioT;
 }
 
 //Testosteron wolny
-function ft(N, U, T, shbg, alb){
+function ft(N, U, T, shbg, alb) {
     var a = wspA(U, N, shbg, alb, T);
     var b = wspB(U, N, shbg, alb, T);
-    var ft = (-b + Math.sqrt( Math.pow(b,2) + 4 * a * T) ) / ( 2 * a);
+    var ft = (-b + Math.sqrt(Math.pow(b, 2) + 4 * a * T)) / (2 * a);
     return ft;
 }
 
@@ -601,8 +588,8 @@ function calculateHormon(hormon, unitArray) {
     var unit2 = $('#' + hormon + 'Unit2').val();
     var pow2 = $('#' + hormon + 'Unit2').find('option:selected').attr("data")
     var val2 = val * unitArray[unit][unit2];
-    if(pow !== 'NaN' && typeof pow !== 'undefined' && typeof pow2 !== 'undefined'){
-        val2 = val2 * Math.pow(10,(pow-pow2));
+    if (pow !== 'NaN' && typeof pow !== 'undefined' && typeof pow2 !== 'undefined') {
+        val2 = val2 * Math.pow(10, (pow - pow2));
     }
     val2 = val2.toFixed(4);
     if (val2 !== 'NaN') {
@@ -643,29 +630,25 @@ function contactSend() {
                         $('#email').val('');
                         $('#subject').val('');
                         $('#message').val('');
-                    }
-                    else {
+                    } else {
                         showAlert('ERROR');
                     }
                     $('.load').hide();
                     $('#send').show();
                 }
             });
-        }
-        else {
+        } else {
             showAlert('WARNING');
             //Email
             if (!isEmail(email)) {
                 $('#email').addClass('error');
-            }
-            else {
+            } else {
                 $('#email').removeClass('error');
             }
             //Message
             if (message === '') {
                 $('#message').addClass('error');
-            }
-            else {
+            } else {
                 $('#message').removeClass('error');
             }
         }
@@ -698,8 +681,8 @@ function isEmail(email) {
 //function check resolution
 
 function checkResolution() {
-    var windowWidth = Math.max( $(window).width(), window.innerWidth),
-    device = "";
+    var windowWidth = Math.max($(window).width(), window.innerWidth),
+            device = "";
 
     if (windowWidth <= 767) {
         device = "mobile";
@@ -717,8 +700,7 @@ function tab() {
     $('#tab a').click(function (e) {
         e.preventDefault();
         if ($(this).parent('li').hasClass('selected')) {
-        }
-        else {
+        } else {
             var selector = $(this).attr('href');
             $('#tab li').removeClass('selected');
             $('article div').removeClass('in');
@@ -772,21 +754,19 @@ function showLeftMenu() {
     if (checkResolution() === 'desktop') {
         $('#show-menu a').removeClass('show').addClass('hide');
         $('aside').removeClass('hide');
-    }
-    else {
+    } else {
         $('#show-menu a').removeClass('show').addClass('hide');
         $('aside').addClass('hide');
         $('#show-menu a').click(function (e) {
             e.preventDefault();
-            if($(this).hasClass('show')) {
+            if ($(this).hasClass('show')) {
                 $(this).removeClass('show').addClass('hide');
                 $('aside').addClass('hide');
-            }
-            else {
+            } else {
                 $(this).removeClass('hide').addClass('show');
                 $('aside').removeClass('hide');
             }
-        });  
+        });
     }
 }
 
@@ -823,9 +803,7 @@ function ciasteczka(a)
             expires: 3650
         });
         $('#ciasteczka_alert').hide();
-    }
-    else
-    {
+    } else {
         if ($.cookie('ciasteczka_accept') >= 0)
             $('#ciasteczka_alert').hide();
         else
@@ -841,4 +819,31 @@ function listenAnchorUrl() {
         $('#' + hash).parent().addClass('active');
         $('#' + hash).next('div').slideDown();
     }
+}
+
+function initArticleGallery() {
+    $('.zoom-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        closeOnContentClick: false,
+        closeBtnInside: false,
+        mainClass: 'mfp-with-zoom mfp-img-mobile',
+        image: {
+            verticalFit: true,
+            titleSrc: function (item) {
+                return item.el.attr('title');
+            }
+        },
+        gallery: {
+            enabled: true
+        },
+        zoom: {
+            enabled: true,
+            duration: 300, // don't foget to change the duration also in CSS
+            opener: function (element) {
+                return element.find('img');
+            }
+        }
+
+    });
 }

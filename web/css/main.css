@@ -2111,8 +2111,15 @@
 .gallery-image-wrapper {
   display: inline-block;
   float: left;
-  margin-right: 30px;
+  margin-right: 5%;
+  width: 30%;
   margin-bottom: 30px;
+}
+.gallery-image-wrapper:nth-child(3n) {
+  margin-right: 0;
+}
+.gallery-image-wrapper img {
+  width: 100%;
 }
 * {
   -webkit-box-sizing: border-box;
