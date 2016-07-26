@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/../../../lib/socialHelper.php';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -72,11 +72,11 @@ class pageComponents extends sfComponents {
         }
     }
 
-    public function executeSubpage(sfWebRequest $request) {
+    public function executeSubpage() {
         $this->subPage = pageTable::getSubPage($this->page);
     }
 
-    public function executeGetUrl(sfWebRequest $request) {
+    public function executeGetUrl() {
         $this->page = pageTable::getPageByRouteHash($this->routeHash);
     }
 
@@ -92,7 +92,13 @@ class pageComponents extends sfComponents {
     public function executeMenuOnFooter() {
         $this->menu = pageTable::getMenuHeader();
     }
-
+    
+    /**
+     * Render meta tag for social media
+     * @param sfWebRequest $request
+     */
+    public function executeMetaOgTag(sfWebRequest $request){
+        $socialHelper = new socialHelper(sfContext::getInstance()->getRouting(), $request);
+        $this->ogTagData = $socialHelper->getOgTagData();
+    }
 }
-
-?>

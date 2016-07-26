@@ -6,6 +6,9 @@
         <?php include_title() ?>
         <?php include_stylesheets() ?>
         <?php include_javascripts() ?>
+        <!--START meta tag for social media-->
+        <?php include_component('page', 'metaOgTag') ?>
+        <!--END meta tag for social media-->
     </head>
     <body class="static">
         <header id="top">

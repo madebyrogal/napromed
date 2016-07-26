@@ -7,6 +7,9 @@
         <?php include_stylesheets() ?>
         <link href="/css/onepage-scroll.css" media="screen" type="text/css" rel="stylesheet">
         <?php include_javascripts() ?>
+        <!--START meta tag for social media-->
+        <?php include_component('page', 'metaOgTag') ?>
+        <!--END meta tag for social media-->
     </head>
     <body class="home">
         <header id="top" class="clearfix">
