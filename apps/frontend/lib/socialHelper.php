@@ -23,13 +23,18 @@ class socialHelper
                 $this->ogTagData['fb']['title'] = $article->getTitle();
                 $this->ogTagData['fb']['description'] = $article->getSneakPeak();
                 $this->ogTagData['fb']['type'] = 'article';
-                $this->ogTagData['fb']['url'] = '';
+                $this->ogTagData['fb']['url'] = sfContext::getInstance()->getRouting()->generate('article_show', ['id'=>$article->getId(), 'slug'=>$article->getSlug()], true);
                 $this->ogTagData['fb']['site_name'] = 'Napromed';
-                $this->ogTagData['fb']['image'] = mediaTable::getMainMedia('article', $article->getId());
+                $picture = mediaTable::getMainMedia('article', $article->getId());
+                if($picture){
+                    $this->ogTagData['fb']['image'] = 'http://' . $request->getHost() . $picture->getFile();
+                } else {
+                    $this->ogTagData['fb']['image'] = 'http://' . $request->getHost() . '/images/fb-default-photo.jpg';
+                }
                 $this->ogTagData['fb']['locale'] = 'pl_PL';
                 break;
             default :
-                $this->ogTagData['fb']['image'] = '/images/fb-default-photo.jpg';
+                $this->ogTagData['fb']['image'] = 'http://' . $request->getHost() . '/images/fb-default-photo.jpg';
                 $this->ogTagData['fb']['locale'] = 'pl_PL';
                 break;
         }
