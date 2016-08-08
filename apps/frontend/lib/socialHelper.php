@@ -9,7 +9,7 @@ class socialHelper
      * Meta ogTag Data for social media
      * @var array $ogTagData
      */
-    private $ogTagData = [];
+    private $ogTagData = array();
     
     /**
      * Article object
@@ -23,7 +23,7 @@ class socialHelper
                 $this->ogTagData['fb']['title'] = $article->getTitle();
                 $this->ogTagData['fb']['description'] = $article->getSneakPeak();
                 $this->ogTagData['fb']['type'] = 'article';
-                $this->ogTagData['fb']['url'] = sfContext::getInstance()->getRouting()->generate('article_show', ['id'=>$article->getId(), 'slug'=>$article->getSlug()], true);
+                $this->ogTagData['fb']['url'] = sfContext::getInstance()->getRouting()->generate('article_show', array('id'=>$article->getId(), 'slug'=>$article->getSlug()), true);
                 $this->ogTagData['fb']['site_name'] = 'Napromed';
                 $picture = mediaTable::getMainMedia('article', $article->getId());
                 if($picture){
